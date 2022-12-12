@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% if title %}
+	    <title>{{ title }} | Spectrum</title>
+    {% else %}
+        <title>Spectrum</title>
+    {% endif %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename ='owl.carousel.min.css') }}" />
+    <!-- font awesome style -->
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}" />
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link type='text/css' href="{{ url_for('static', filename='responsive.css') }}" rel="stylesheet" />
+    <script type='text/javascri' src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/cutom.js') }}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="hero_area">
+            <!-- header section strats -->
+            <header class="header_section">
+              <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                  <a class="navbar-brand" href="{{url_for ('home') }}">
+                    <span>
+                      SPECTRUM
+                    </span>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+        
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ml-auto flex-column flex-lg- row align-items-center">
+                      <ul class="navbar-nav  ">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="{{url_for ('home')}}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{url_for ('about')}}">About </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{url_for ('product')}}"> Products </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{url_for ('contact')}}">Contact us</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{url_for ('login')}}"> Login </a>
+                        </li>
+                      </ul>
+                      <div class="quote_btn-container ">
+                        <a href="" class="cart_link">
+                          <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                          <span class="cart_number">
+                            0
+                          </span>
+                        </a>
+                        <form class="form-inline ">
+                            <button class="btn  nav_search-btn" type="submit">
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </header>
+            <!-- end header section -->
+                    <div class='text-center'>
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                          {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">
+                              {{ message }}
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                      {% endwith %}
+                    </div>
+                </div>
+                <div>
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+        <div class="gototop js-top">
+            <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+        </div>
+
+    
+</html>
