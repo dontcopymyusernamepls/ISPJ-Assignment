@@ -132,6 +132,10 @@ body {
   color: #d33d33;
 }
 
+.custom_nav-container.navbar-expand-lg .navbar-nav .nav-item .nav-link:active {
+  color: #d33d33;
+}
+
 .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active .nav-link {
   color: #d33d33;
 }
@@ -143,6 +147,7 @@ a:focus {
 }
 
 a:hover,
+a:active,
 a:focus {
   color: initial;
 }

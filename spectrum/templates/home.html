@@ -6,55 +6,48 @@
  
     <!-- slider section -->
     <div class="hero_area">
-    <section class=" slider_section position-relative">
-      <ol class="carousel-indicators indicator-2">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active indicator-li-1">01</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
-      </ol>
-      <div class="container-fluid h-100">
-        <div class="row">
-          <div class="col-md-5 col-xl-4 offset-xl-1 ">
-            <div class="detail-box">
-              <h1>
-                Sports and <br>
-                Fitness Store
-              </h1>
-              <p>
-                There are many variations of passages of Lorem Ipsum available.
-              </p>
-              <div class="btn-box">
-                <a href="" class="btn-1">
-                  Shop Now
-                </a>
-                <a href="" class="btn-2">
-                  Get A Quote
-                </a>
+      <section class=" slider_section position-relative">
+        <div class="container-fluid h-100">
+          <div class="row">
+            <div class="col-md-5 col-xl-4 offset-xl-1 ">
+              <div class="detail-box">
+                <h1>
+                  Sports and <br>
+                  Fitness Store
+                </h1>
+                <p>
+                  There are many variations of passages of Lorem Ipsum available.
+                </p>
+                <div class="btn-box">
+                  <a href="{{url_for ('product')}}" class="btn-1">
+                    Shop Now
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-7 px-0 h-100">
-            <div class="img_container h-100">
-              <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-                <ol class="carousel-indicators indicator-1">
-                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active indicator-li-1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="img-box">
-                      <img src="static/images/slider-img.jpg" alt="">
+            <div class="col-md-7 px-0 h-100">
+              <div class="img_container h-100">
+                <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+                  <ol class="carousel-indicators indicator-1">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active indicator-li-1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="img-box">
+                        <img src="static/images/slider-img.jpg" alt="">
+                      </div>
                     </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="img-box">
-                      <img src="static/images/slider-img2.jpg" alt="">
+                    <div class="carousel-item">
+                      <div class="img-box">
+                        <img src="static/images/slider-img2.jpg" alt="">
+                      </div>
                     </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="img-box">
-                      <img src="static/images/slider-img3.jpg" alt="">
+                    <div class="carousel-item">
+                      <div class="img-box">
+                        <img src="static/images/slider-img3.jpg" alt="">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -62,8 +55,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     <!-- end slider section -->
   </div>
 
@@ -270,7 +262,7 @@
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus hic, dolore error nulla similique cum minima rem, distinctio animi architecto inventore temporibus consequuntur quibusdam modi atque est fuga dicta quae!
             </p>
             <div>
-              <a href="">
+              <a href="{{url_for ('product')}}">
                 Buy Now
               </a>
             </div>
@@ -561,7 +553,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="">View All</a>
+        <a href="{{url_for ('product')}}">View All</a>
       </div>
     </div>
   </section>
@@ -608,7 +600,7 @@
     <div class="container">
       <div class="heading_container ">
         <h2>
-          What is says our clients
+          What says our clients
         </h2>
       </div>
       <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
