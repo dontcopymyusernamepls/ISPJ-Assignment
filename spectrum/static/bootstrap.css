@@ -6972,10 +6972,7 @@ button.bg-dark:focus {
   flex-direction: row !important;
 }
 
-.flex-column {
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
-}
+
 
 .flex-row-reverse {
   -ms-flex-direction: row-reverse !important;
