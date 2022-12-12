@@ -10,6 +10,8 @@ from spectrum.database import Users, User, Staff, Addproducts, Category
 from flask_login import current_user
 from wtforms import SubmitField, IntegerField, FloatField, StringField, TextAreaField, validators, SelectField, BooleanField
 from flask_wtf.file import FileField, FileRequired, FileAllowed
+import onetimepass
+import pyqrcode
 
 
 class RegistrationForm(FlaskForm):
@@ -30,11 +32,13 @@ class RegistrationForm(FlaskForm):
         user = Users.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('email is taken.')
+    
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
     password = StringField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
+    token = StringField('Token', validators=[DataRequired(), Length(6, 6)])
     submit = SubmitField('Login')
 
 class UpdateUserAccountForm(FlaskForm):
@@ -86,10 +90,11 @@ class AddproductForm(FlaskForm):
     image_5 = FileField('Image 5', validators=[FileRequired(), FileAllowed(['jpg','png','gif','jpeg'])])
     submit = SubmitField("Add product")
 
+
 class UpdateProductForm(FlaskForm):
     name = StringField('Product Name', [validators.DataRequired()])
     description = TextAreaField('Description', [validators.DataRequired()])
-    category = SelectField('Category', validators=[DataRequired()], choices=[(1, 'New Arrival'), (2, 'Most Popular'), (3, '	Limited Time'), (4, 'Chair'), (5, 'Table'), (6, 'Cabinet'), (7, 'Door'), (8, 'Bed'), (9, 'Decoration'), (10, 'Others')])
+    category = SelectField('Category', validators=[DataRequired()], choices=[(1, 'New Arrival'), (2, 'Most Popular'), (3, '	Limited Time'), (4, 'Top'), (5, 'Bottom'), (6, 'Footwear'), (7, 'Shoes'), (8, 'Jackets & Windbreakers'), (9, 'Equipments'), (10, 'Accessories')])
     price = FloatField('Price', [validators.DataRequired()])
     stock = IntegerField('Stock', [validators.DataRequired()])
     length = IntegerField('Length', [validators.DataRequired()])

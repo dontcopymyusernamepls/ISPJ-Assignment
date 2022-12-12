@@ -1,0 +1,68 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div>
+    <p class='text-center'>{{ current_user.username }}'s Cart</p>
+</div>
+
+<div class="page-wrapper">
+  <div class="cart shopping">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <div class="block">
+            <div class="product-list">
+              <form method="post">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="">Item Name</th>
+                      <th class="">Item Price</th>
+                      <th class="">Quantity</th>
+                      <th class=""></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for product in cart_items %}
+                    <tr class="">
+                      <td class="">
+                        <div class="product-info">
+                          <img width="80" src="{{url_for('static', filename='product_pics/' + product.image_1)}}" alt="" />
+                          <a href="{{ url_for('product_details', id=product.product_id) }}">{{ product.name }}</a>
+                        </div>
+                      </td>
+                      <td class="text-center">{{ product.price }}</td>
+                      <td class="text-center col-md-2"> 
+                        <a href="{{ url_for('add_quantity', id=product.id) }}">+</a> {{ product.quantity }} <a href="{{ url_for('min_quantity', id=product.id) }}">-</a> 
+                      </td>
+                      <td class="">
+                        <a class="product-remove text-center" style="text-decoration: underline" href="{{ url_for('delete_cart', id=product.id)}}">Remove</a>
+                      </td>
+                    </tr>
+
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if cart_items %}
+<div class="container text-center">
+  <p>
+    <a class="btn btn-primary" href="{{ url_for('checkout_details')}}">Checkout</a>
+  </p>
+</div>
+{% else %}
+<div class="container text-center">
+  <p>
+    Add items to your cart to checkout!
+  </p>
+</div>
+{% endif %}
+
+{% endblock %}

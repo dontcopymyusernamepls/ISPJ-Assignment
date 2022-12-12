@@ -14,7 +14,7 @@
                 </h2>
               </div>
               <form method="POST", action='' novalidate>
-
+                {{ form.csrf_token }}
                 <div class='form-group mb-3'>
                     {{ form.email.label(class='form-label') }}
                     {% if form.email.errors %}
@@ -43,7 +43,7 @@
                             {{ form.password(class="form-control form-control-lg") }}
                         {% endif %}
                         <small class="text-muted">
-                            <a href="#">Forgot Password?</a>
+                            <a href="{{ url_for('reset_password') }}">Forgot Password?</a>
                         </small>
                     </div>  
                     <div class="form-group mb-3" >
@@ -68,7 +68,7 @@
 
   <div class='container text-center'>
     <small class="text-muted">
-        New to this site? Register <a class="ml-2" href="#">here</a>
+        New to this site? Register <a class="ml-2" href="register">here</a>
     </small>  
     <!-- line 38:{{ url_for('reset_password') }}
     line 55: {{ url_for('register') }} -->

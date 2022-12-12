@@ -3,6 +3,13 @@ from spectrum import db, login_manager, app
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask_login import UserMixin
 from datetime import datetime, date
+from werkzeug.security import generate_password_hash, check_password_hash
+import os
+import base64
+from io import BytesIO
+import onetimepass
+import pyqrcode
+
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -17,27 +24,41 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(30), nullable=False)
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(100), nullable=False, unique=True)
-    password = db.Column(db.String(60), nullable=False)
+    password_hash = db.Column(db.String(128))
     role = db.Column(db.String(10), nullable=False, default='user')
     image_file = db.Column(db.String(20), nullable=False, default='defaultpfp.jpg')
+    otp_secret = db.Column(db.String(16))
 
     __mapper_args__ = {
         'polymorphic_on':type,
         'polymorphic_identity':'user'
     }
 
-    def get_reset_token(self, expires_sec=1800):
-        s = Serializer(app.config['SECRET_KEY'], expires_sec)
-        return s.dumps({'user_id': self.id}).decode('utf-8')
+    def __init__(self, **kwargs):
+        super(User, self).__init__(**kwargs)
+        if self.otp_secret is None:
+            # generate a random secret
+            self.otp_secret = base64.b32encode(os.urandom(10)).decode('utf-8')
 
-    def verify_reset_token(token):
-        s = Serializer(app.config['SECRET_KEY'])
-        try:
-            user_id = s.loads(token)['user_id']
-        except:
-            return None
+    @property
+    def password(self):
+        raise AttributeError('password is not a readable attribute')
 
-        return User.query.get(user_id)
+    @password.setter
+    def password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def verify_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
+    def get_totp_uri(self):
+        return 'otpauth://totp/2FA-Demo:{0}?secret={1}&issuer=2FA-Demo' \
+            .format(self.username, self.otp_secret)
+
+    def verify_totp(self, token):
+        return onetimepass.valid_totp(token, self.otp_secret)
+
+
 
 
     def __repr__(self):
