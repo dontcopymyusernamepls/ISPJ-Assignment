@@ -30,6 +30,21 @@ def admin_required(f):
             abort(401)
     return wrap
 
+#--------------------CUSTOM-ERROR-PAGE-------------------------#
+
+@app.errorhandler(401)
+def unauthorized(e):
+    return render_template('error/401.html'), 401
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('error/404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    # note that we set the 500 status explicitly
+    return render_template('error/500.html'), 500
 
 #--------------------LOGIN-LOGOUT-REGISTER-PAGE--------------------------#
 
@@ -105,14 +120,18 @@ def login():
                 not user.verify_totp(form.token.data):
                 flash(f'Login Unsuccessful. Please check email and password', 'danger')
                 return redirect(url_for('login'))
-
+          
         # log user in
         login_user(user)
         flash('You are now logged in!')
-        return redirect(url_for('home'))
+        next = request.args.get('next')
+        return redirect(next) if next else redirect(url_for('home'))
     return render_template('login.html', title='Login',form=form)
 
-
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
 
 def send_reset_email(user):
     token = user.get_reset_token()
@@ -257,9 +276,12 @@ def checkout_details():
     
     total = subtotal + 10
     if form.validate_on_submit():
+        full_name = form.full_name.data
         en_address = cipher.encrypt(3,form.address.data)
-        en_postal_code = cipher.encrypt(form.postal_code.data)
-        checkout_details = Customer_Payments(address=en_address, postal_code=en_postal_code)
+        postal_code = form.postal_code.data
+        en_card_number = cipher.encrypt(3,form.card_number.data)
+        en_cvv = cipher.encrypt(3,form.cvv.data)
+        checkout_details = Customer_Payments(full_name=full_name, address=en_address, postal_code=postal_code, card_number=en_card_number, cvv=en_cvv)
         db.session.add(checkout_details)
         
         for cart_item in cart_items:
@@ -273,11 +295,44 @@ def checkout_details():
         return redirect(url_for('thanks'))
     return render_template('checkout.html', title='Checkout',form=form, cart_items=cart_items, subtotal=subtotal, total=total)
 
+@app.route('/thanks')
+def thanks():
+    return render_template('thanks.html', title='Order Confirmed')
+
+@app.route('/verify_checkout_page')
+def verify():
+    return render_template('verify_checkout_page.html',title = 'Verify')
+
+
 #---------------------ADMIN-PAGE------------------------#
 
+@app.route('/admin/register', methods=['GET', 'POST'])
+#@login_required
+#@admin_required
+def admin_register():
+    """User registration route."""
+    if current_user.is_authenticated:
+        # if user is logged in we get out of here
+        return redirect(url_for('home'))
+    form = AdminRegisterForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is not None:
+            flash('Username already exists.')
+            return redirect(url_for('admin_register'))
+        # add new user to the database
+        user = Staff(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, password=form.password.data, role='admin')
+        db.session.add(user)
+        db.session.commit()
+
+        # redirect to the two-factor auth page, passing username in session
+        session['username'] = user.username
+        return redirect(url_for('two_factor_setup'))
+    return render_template('admin/register.html', form=form)
+
 @app.route('/admin/dashboard')
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def dashboard():
     return render_template('/admin/dashboard.html', title='Dashboard')
 
@@ -416,8 +471,8 @@ def delete_product(id):
     return redirect(url_for('display_product'))
 
 @app.route('/admin/sales')
-@login_required
-@admin_required
+# @login_required
+# @admin_required
 def sales():
     # line_graph = create_graph()
     current_year = datetime.utcnow().year
@@ -430,4 +485,6 @@ def sales():
     for product in current_month_total:
         total_count += product.quantity
         total_profit += product.price
-    return render_template('admin/sales.html',title='Sales Report' ,plot=line_graph, total_count=total_count, total_profit=total_profit, current_day_products=current_day_products)
+    return render_template('admin/sales.html',title='Sales Report', total_count=total_count, total_profit=total_profit, current_day_products=current_day_products)
+    # return render_template('admin/sales.html',title='Sales Report' ,plot=line_graph, total_count=total_count, total_profit=total_profit, current_day_products=current_day_products)
+
