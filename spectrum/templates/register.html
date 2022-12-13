@@ -8,13 +8,14 @@
             <div class="contact_form layout_padding">
               <div class="heading_container heading_center">
                 <h2>
-                  Register
+                  Registration
                 </h2>
+                <br>
               </div>
               <form method="POST", action='' novalidate>
                 {{ form.csrf_token }}
                 <div class="form-group">
-                    {{ form.first_name.label(class="form-control-label") }}
+                    {{ form.first_name.label(class="form-control-label")}}
                 
                     {% if form.first_name.errors %}
                         {{ form.first_name(class="form-control form-control-lg is-invalid") }}
@@ -99,7 +100,9 @@
                         {{ form.confirm_password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-            
+
+                <small class="'text-muted"> By creating an account with SPECTRUM, you are agreeing to the Terms and Conditions of SPECTRUM and allowing notifications to be sent to your email. </small><br><br>
+
                 <div class="btn-box">
             
                         {{ form.submit(class='btn btn-secondary') }}
@@ -107,7 +110,13 @@
                 </div>
               </form>
               <br>
+              <div class='container text-center'>
+                <small class="text-muted">
+                    Already Have An Account? Log in<a class="ml-2" href="{{ url_for('login') }}">here</a>
+                </small>  
             </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -115,9 +124,4 @@
   </section>
 
         
-    <div class='container text-center'>
-        <small class="text-muted">
-            Already Have An Account? Log in <a class="ml-2" href="{{ url_for('login') }}">here</a>
-        </small>  
-    </div>
 {% endblock content %}

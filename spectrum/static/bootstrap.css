@@ -67,6 +67,7 @@ body {
   outline: 0 !important;
 }
 
+
 hr {
   box-sizing: content-box;
   height: 0;
@@ -198,6 +199,22 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+}
+
+#pfp {
+  margin: 0 auto;
+  display: block;
+  
+}
+
+#displayusername {
+text-align: center;
+justify-content: center;
+}
+
+#displayemail{
+  text-align: center;
+  justify-content: center;
 }
 
 svg {
@@ -430,6 +447,7 @@ small,
 .small {
   font-size: 80%;
   font-weight: 400;
+  font-style: italic;
 }
 
 mark,
@@ -2027,7 +2045,7 @@ textarea.form-control {
 .form-check-input {
   position: absolute;
   margin-top: 0.3rem;
-  margin-left: -1.25rem;
+  
 }
 
 .form-check-input:disabled ~ .form-check-label {
@@ -2036,6 +2054,8 @@ textarea.form-control {
 
 .form-check-label {
   margin-bottom: 0;
+  padding: 18px;
+  margin-top: -100px;
 }
 
 .form-check-inline {
@@ -2454,20 +2474,22 @@ fieldset:disabled a.btn {
 }
 
 .btn-secondary {
-    display: inline-block;
-    padding: 10px 45px;
-    background-color: #d33d33;
-    border: 1px solid #d33d33;
+    padding: 10px 65px;
+    background-color: #9262da;
+    border: 1px solid #9262da;
     color: #ffffff;
     border-radius: 0px;
     -webkit-transition: all .3s;
     transition: all .3s;
+    margin: 0 auto;
+    display: block;
 }
 
 .btn-secondary:hover {
   color: #fff;
-  background-color: #5a6268;
-  border-color: #545b62;
+  background-color: #ffffff;
+  border-color: #9262da;
+  color: #9262da;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {

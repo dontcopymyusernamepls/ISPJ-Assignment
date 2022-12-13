@@ -20,7 +20,9 @@ import onetimepass
 import pyqrcode
 
 
-
+def trunc_datetime(someDate):
+    return someDate.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+    
 def admin_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -118,7 +120,7 @@ def login():
 
         if user is None or not user.verify_password(form.password.data) or \
                 not user.verify_totp(form.token.data):
-                flash(f'Login Unsuccessful. Please check email and password', 'danger')
+                flash(f'Oops! Login unsuccessful. Please check your details.', 'danger')
                 return redirect(url_for('login'))
           
         # log user in
@@ -197,7 +199,7 @@ def account():
         form.username.data = current_user.username
         form.email.data = current_user.email
 
-    image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
+    image_file = url_for('static', filename='images/' + current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file, form=form)
 
 @app.route('/account/delete', methods=['POST'])
@@ -215,6 +217,7 @@ def delete_account():
 @app.route('/')
 @app.route('/home')
 def home():
+
     return render_template('home.html', title='Home')
     
 @app.route('/about')
@@ -224,8 +227,9 @@ def about():
 
 @app.route('/product')
 def product():
-    
-    return render_template('product.html', title='Products')
+    products = Addproducts.query.all()
+
+    return render_template('product.html', title='Products', products=products)
 
 @app.route('/contact')
 def contact():
@@ -236,7 +240,7 @@ def save_picture(form_pic, current_picture):
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_pic.filename)
     picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
+    picture_path = os.path.join(app.root_path, 'static/images', picture_fn)
 
     output_size = (125, 125)
     i = Image.open(form_pic)
@@ -244,7 +248,7 @@ def save_picture(form_pic, current_picture):
     i.save(picture_path)
 
     if current_picture != "defaultpfp.jpg":
-        os.remove(os.path.join(app.root_path, "static/profile_pics/", current_picture))
+        os.remove(os.path.join(app.root_path, "static/images/", current_picture))
 
 
     return picture_fn
@@ -303,6 +307,24 @@ def thanks():
 def verify():
     return render_template('verify_checkout_page.html',title = 'Verify')
 
+@app.route('/product_details/<int:id>', methods=['GET', 'POST'])
+def product_details(id):
+    products = Addproducts.query.get_or_404(id)
+    product_reviews = Review.query.filter_by(product_id=id)
+    if current_user.is_authenticated:
+        product_bought = Product_Bought.query.filter_by(user_id=current_user.id, product_id=id).first()
+    else:
+        product_bought = None
+    form = AddReviewForm()
+    if form.validate_on_submit():
+        review = Review(user_review=form.review.data, product_id=id, author=current_user, rating=form.rating.data)
+        db.session.add(review)
+        db.session.commit()
+        flash('Your review has been added!', 'success')
+        return redirect(url_for('shop'))
+    return render_template('product_details.html', title="Product Details", products=products, product_reviews=product_reviews ,form=form, product_bought=product_bought)
+
+
 
 #---------------------ADMIN-PAGE------------------------#
 
@@ -350,8 +372,8 @@ def save_product_picture(form_pic):
     return picture_fn
 
 @app.route('/admin/add_product', methods=['POST', 'GET'])
-# @login_required 
-# @admin_required
+@login_required 
+@admin_required
 def add_product():
     form = AddproductForm()
     categories = Category.query.all()
@@ -366,10 +388,10 @@ def add_product():
         stock = form.stock.data
         print(category, "\n\n\n\n\n")
         image_1 = save_product_picture(form.image_1.data)
-        image_2 = save_product_picture(form.image_2.data)
-        image_3 = save_product_picture(form.image_3.data)
-        image_4 = save_product_picture(form.image_4.data)
-        image_5 = save_product_picture(form.image_5.data)
+        image_2 = save_product_picture(form.image_1.data)
+        image_3 = save_product_picture(form.image_1.data)
+        image_4 = save_product_picture(form.image_1.data)
+        image_5 = save_product_picture(form.image_1.data)
         add_product = Addproducts(name = name, description = description, length = length, width = width, depth = depth, category_id = category, price = price, stock = stock, image_1 = image_1, image_2 = image_2, image_3 = image_3, image_4 = image_4, image_5 = image_5)
         db.session.add(add_product)
         db.session.commit()
@@ -379,16 +401,16 @@ def add_product():
 
 
 @app.route('/admin/display_product')
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def display_product():
     products = Addproducts.query.all()
     return render_template('admin/display_product.html', title='Product List', products=products)
 
 
 @app.route('/updateproduct/<int:id>', methods=['GET','POST'])
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def update_product(id):
     form = UpdateProductForm()
     product = Addproducts.query.get_or_404(id)
@@ -450,8 +472,8 @@ def update_product(id):
     return render_template('admin/add_product.html', form=form, title='Update Product',getproduct=product, categories=categories)
 
 @app.route('/deleteproduct/<int:id>', methods=['POST'])
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def delete_product(id):
     product = Addproducts.query.get_or_404(id)
     if request.method =="POST":

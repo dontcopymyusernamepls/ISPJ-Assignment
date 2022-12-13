@@ -61,12 +61,13 @@
                       {% endif %}
                       </div>
 
-                    <div class="form-group mb-3" >
+                    <small class="text-muted" id="">
                         {{ form.remember(class='form-check-input') }}
                         {{ form.remember.label(class="form-check-label") }}
-                    </div>
-                </div>
-
+                    </small>
+                    <br><br>
+               
+              
                 <div class="btn-box">
             
                         {{ form.submit(class='btn btn-secondary') }}
@@ -74,20 +75,23 @@
                 </div>
               </form>
               <br>
+              <div class='container text-center'>
+                <small class="text-muted">
+                    New to this site? Register<a class="ml-2" href="register">here</a>
+                </small>  
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+
   </section>
 
-  <div class='container text-center'>
-    <small class="text-muted">
-        New to this site? Register <a class="ml-2" href="register">here</a>
-    </small>  
     <!-- line 38:{{ url_for('reset_password') }}
     line 55: {{ url_for('register') }} -->
-</div>
+
 {% endblock content %}
 
 
