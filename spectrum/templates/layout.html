@@ -52,7 +52,7 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <div class="d-flex ml-auto flex-column flex-lg- row align-items-center">
                       <ul class="navbar-nav  ">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                           <a class="nav-link" href="{{url_for ('home')}}">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -64,10 +64,27 @@
                         <li class="nav-item">
                           <a class="nav-link" href="{{url_for ('contact')}}">Contact us</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{url_for ('login')}}"> Login </a>
-                        </li>
-                      </ul>
+              
+
+                
+                        {% if current_user.is_authenticated %}
+                            {% if current_user.role == 'user' %}
+                                <Li class="nav-item"><a class="nav-link" href="{{url_for('account')}}">Account</a></Li>
+                                <Li class="nav-item"><a class="nav-link" href="{{url_for('logout')}}">Log Out</a></Li>
+                                
+                            {% elif current_user.role == 'admin' %}
+                                <li class="nav-item"><a class="nav-link" href="{{url_for('dashboard')}}">Dashboard</a></li>
+                                <Li class="nav-item"><a class="nav-link" href="{{url_for('logout')}}">Log Out</a></Li>
+                            {% endif %}
+                        {% else %}
+                                <Li class="nav-item"><a class="nav-link" href="{{url_for('login')}}">Login</a></Li>
+                                <Li class="nav-item"><a class="nav-link" href="{{url_for('register')}}">Register</a></Li>
+                        
+                        {% endif %}
+                       
+                    </ul>
+                </div>
+        </div>
                       <div class="quote_btn-container ">
                         <a href="{{url_for('cart')}}" class="cart_link">
                           <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>

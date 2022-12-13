@@ -77,7 +77,7 @@ class ResetPasswordForm(FlaskForm):
 class AddproductForm(FlaskForm):
     name = StringField('Product Name', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
-    category = SelectField('Category', validators=[DataRequired()], choices=[(1, 'New Arrival'), (2, 'Most Popular'), (3, '	Limited Time'), (4, 'Chair'), (5, 'Table'), (6, 'Cabinet'), (7, 'Door'), (8, 'Bed'), (9, 'Decoration'), (10, 'Others')])
+    category = SelectField('Category', validators=[DataRequired()], choices=[(1, 'New Arrival'), (2, 'Most Popular'), (3, '	Limited Time'), (4, 'Top'), (5, 'Bottom'), (6, 'Socks'), (7, 'Shoes'), (8, 'Equipments'), (9, 'Accessories'), (10, 'Others')])
     price = FloatField('Price', validators=[DataRequired()])
     stock = IntegerField('Stock', validators=[DataRequired()])
     length = IntegerField('Length', validators=[DataRequired()])
@@ -94,7 +94,7 @@ class AddproductForm(FlaskForm):
 class UpdateProductForm(FlaskForm):
     name = StringField('Product Name', [validators.DataRequired()])
     description = TextAreaField('Description', [validators.DataRequired()])
-    category = SelectField('Category', validators=[DataRequired()], choices=[(1, 'New Arrival'), (2, 'Most Popular'), (3, '	Limited Time'), (4, 'Top'), (5, 'Bottom'), (6, 'Footwear'), (7, 'Shoes'), (8, 'Jackets & Windbreakers'), (9, 'Equipments'), (10, 'Accessories')])
+    category = SelectField('Category', validators=[DataRequired()], choices=[(1, 'New Arrival'), (2, 'Most Popular'), (3, '	Limited Time'), (4, 'Top'), (5, 'Bottom'), (6, 'Socks'), (7, 'Shoes'), (8, 'Equipments'), (9, 'Accessories'), (10, 'Others')])
     price = FloatField('Price', [validators.DataRequired()])
     stock = IntegerField('Stock', [validators.DataRequired()])
     length = IntegerField('Length', [validators.DataRequired()])

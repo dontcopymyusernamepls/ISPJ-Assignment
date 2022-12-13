@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div>
+    <p class='text-center'>Verify</p>
+</div>
+<section class="page-wrapper success-msg">
+    <div class="container">
+      <div class="row">
+        <div class="form-group mb-3 col-xs-12 col-sm-6">
+            <label for="token">Token<span class="required">*</span></label>
+            {{form.token(class="form-control")}}
+        </div>
+        <li>
+            <span> Please proceed to verify token <a href="{{url_for('verify')}}">Verify</span>
+        </li>
+      </div>
+    </div>
+</section>
+<div class='form-group mb-3 col-xs-12 col-sm-6'>
+    {{ form.token.label(class='form-label') }}
+    {% if form.token.errors %}
+        {{ form.token(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.token.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+    {% else %}
+        {{ form.token(class="form-control form-control-lg") }}
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

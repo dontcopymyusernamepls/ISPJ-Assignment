@@ -848,6 +848,68 @@ a:focus {
   color: #292929;
 }
 
+
+
 /* end footer section*/
+
+
+.btn-outline-primary:hover {
+  color: rgb(255, 255, 255) !important;
+  background-color: #9262da;
+  border-color: #ffffff
+}
+
+.btn-outline-primary {
+  color: #9262da !important;
+  border-color: #9262da
+  
+}
+
+.btn-group a{
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  margin: auto;
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+.btn-group {
+  float: right;
+
+  position: relative;
+  left: -50%; /* or right 50% */
+  text-align: left;
+}
+
+.btn-group > .child {
+  position: relative;
+  left: 50%;
+}
+
+ul li.dash_options {
+  float: left;
+  list-style-type: none;
+  margin: 3em;
+}
+
+ul.child {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.panel-body{
+  margin: 10% auto;
+
+}
+
+
+
+
+
+
+
 /*# sourceMappingURL=style.css.map */
 /* red:#d33dee */

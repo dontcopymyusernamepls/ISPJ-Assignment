@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section class="page-wrapper success-msg">
+    <div class="container">
+      <div class="row">
+    
+          <div class="block text-center" id="confirm">
+              <i class="tf-ion-android-checkmark-circle"></i>
+            <h2 class="text-center">Thank you for your payment!</h2>
+            <p>We genuinely appreciate your support.</p>
+            <a href="{{url_for('product')}}" class="btn btn-primary">Continue Shopping</a>
+          </div>
+      </div>
+    </div>
+</section>
+{% endblock %}
+

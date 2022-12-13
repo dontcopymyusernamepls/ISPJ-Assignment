@@ -52,7 +52,7 @@ class User(db.Model, UserMixin):
         return check_password_hash(self.password_hash, password)
 
     def get_totp_uri(self):
-        return 'otpauth://totp/2FA-Demo:{0}?secret={1}&issuer=2FA-Demo' \
+        return 'otpauth://totp/SPECTRUM-:{0}?secret={1}&issuer=SPECTRUM' \
             .format(self.username, self.otp_secret)
 
     def verify_totp(self, token):
@@ -158,6 +158,10 @@ class Customer_Payments(db.Model):
     full_name = db.Column(db.String(80), nullable = False)
     address = db.Column(db.Text, nullable = False)
     postal_code = db.Column(db.Integer, nullable = False)
+    card_number = db.Column(db.Integer, nullable=False)
+    cvv = db.Column(db.Integer, nullable=False)
+    def verify_totp(self, token):
+        return onetimepass.valid_totp(token, self.otp_secret)
 
 db.create_all()
 

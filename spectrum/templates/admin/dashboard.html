@@ -5,5 +5,30 @@
 
 
 <u><h2 class='text-center'>Dashboard</h2><u>
+<hr>
 
+<div class="panel-container">
+    <div class="row">
+        <div class="panel-body">
+            <div class="btn-group">
+                <ul class="child">
+                <li class="dash_options"><a href="{{url_for('add_product')}}" class="btn btn-outline-primary btn-lg" role="button">Add Product</a></li>
+                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button">Product List</a></li>
+                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button">Product List</a></li>                      
+                </ul>
+            </div>
+            <br>
+            <div class="btn-group">
+                <ul class="child">
+                <li class="dash_options"><a href="{{url_for('add_product')}}" class="btn btn-outline-primary btn-lg" role="button">Add Product</a></li>
+                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button">Product List</a></li>
+                <li class="dash_options"><a href="{{url_for('sales')}}" class="btn btn-outline-primary btn-lg" role="button">Sales Report</a></li>                      
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
 {% endblock content %}
