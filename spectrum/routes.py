@@ -64,6 +64,7 @@ def register():
         if user is not None:
             flash('Username already exists.')
             return redirect(url_for('register'))
+        
         # add new user to the database
         user = User(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, password=form.password.data)
         db.session.add(user)
@@ -136,6 +137,7 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
 
 def send_reset_email(user):
     token = user.get_reset_token()
