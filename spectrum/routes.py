@@ -12,12 +12,14 @@ import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
 from flask_mail import Message
-from spectrum.forms import LoginForm, RegistrationForm, RequestResetForm, ResetPasswordForm, UpdateUserAccountForm, AddproductForm, UpdateProductForm, AdminRegisterForm, AddToCartForm, AddReviewForm, CheckOutForm
+from spectrum.forms import LoginForm, RegistrationForm, RequestResetForm, ResetPasswordForm, UpdateUserAccountForm, AddproductForm, UpdateProductForm, AdminRegisterForm, AddToCartForm, AddReviewForm, CheckOutForm, VerifyCheckOutForm
 from spectrum.database import Staff, Users, User, Addproducts, Category, Items_In_Cart, Review, Customer_Payments, Product_Bought
 import spectrum.MyCaesarcipher as cipher
+import spectrum.rsa as rsa
 from io import BytesIO
 import onetimepass
 import pyqrcode
+
 
 
 def trunc_datetime(someDate):
@@ -217,8 +219,9 @@ def delete_account():
 @app.route('/')
 @app.route('/home')
 def home():
+    products = Addproducts.query.all()
 
-    return render_template('home.html', title='Home')
+    return render_template('home.html', title='Home', products=products)
     
 @app.route('/about')
 def about():
@@ -279,12 +282,25 @@ def checkout_details():
             subtotal += item.price
     
     total = subtotal + 10
+
+    keysize = 2048
+    private_keyfile = "a_private.pem"
+    public_keyfile = "a_public.pem"
+    
+    keypair = rsa.generate_keypair(keysize)
+    
+    rsa.write_private_key(keypair, private_keyfile)
+    rsa.write_public_key(keypair, public_keyfile)
+    
+    private_key = rsa.read_private_key(private_keyfile)
+    public_key = rsa.read_public_key(public_keyfile)
+
     if form.validate_on_submit():
         full_name = form.full_name.data
-        en_address = cipher.encrypt(3,form.address.data)
+        en_address = rsa.encrypt(public_key, form.address.data)
         postal_code = form.postal_code.data
-        en_card_number = cipher.encrypt(3,form.card_number.data)
-        en_cvv = cipher.encrypt(3,form.cvv.data)
+        en_card_number = rsa.encrypt(public_key, form.card_number.data)
+        en_cvv = rsa.encrypt(public_key, form.cvv.data)
         checkout_details = Customer_Payments(full_name=full_name, address=en_address, postal_code=postal_code, card_number=en_card_number, cvv=en_cvv)
         db.session.add(checkout_details)
         
@@ -296,16 +312,28 @@ def checkout_details():
             db.session.delete(cart_item)
             db.session.commit()
         flash(f'Your order has been submitted!','success')
-        return redirect(url_for('thanks'))
+        return redirect(url_for('thanks')) #verify
     return render_template('checkout.html', title='Checkout',form=form, cart_items=cart_items, subtotal=subtotal, total=total)
 
+#@app.route('/verify_checkout_page')
+#def verify():
+    form = VerifyCheckOutForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user is None or not user.verify_totp(form.otp.data):
+                flash(f'Oops! You have to verify your identity before you can proceed with the checkout.', 'danger')
+                return redirect(url_for('verify'))
+
+        login_user(user)
+        flash('You have successfully verified your identity!')
+        return render_template('verify', title = "Verify Identity")
+#generateopt =random.randint(000000,100000)
+
+          
 @app.route('/thanks')
 def thanks():
     return render_template('thanks.html', title='Order Confirmed')
 
-@app.route('/verify_checkout_page')
-def verify():
-    return render_template('verify_checkout_page.html',title = 'Verify')
 
 @app.route('/product_details/<int:id>', methods=['GET', 'POST'])
 def product_details(id):
@@ -329,13 +357,13 @@ def product_details(id):
 #---------------------ADMIN-PAGE------------------------#
 
 @app.route('/admin/register', methods=['GET', 'POST'])
-#@login_required
-#@admin_required
+@login_required
+@admin_required
 def admin_register():
     """User registration route."""
-    if current_user.is_authenticated:
+    #if current_user.is_authenticated:
         # if user is logged in we get out of here
-        return redirect(url_for('home'))
+        #return redirect(url_for('admin_register'))
     form = AdminRegisterForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
@@ -493,8 +521,8 @@ def delete_product(id):
     return redirect(url_for('display_product'))
 
 @app.route('/admin/sales')
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def sales():
     # line_graph = create_graph()
     current_year = datetime.utcnow().year

@@ -11,22 +11,22 @@
               <div class="heading_container heading_center">
                 <h2> Account Information </h2>
             </div>
-            <br>    <br>    
-            <div class="container">
-                <div class="row">
-                <div class="col">
-                <img src="{{ image_file }}" id="pfp"  class="img-responsive img-rounded" style="border: 3px solid #9269da;" alt="user_profilePic" width = "300" height = "300"></div>
-                <div class="col-md-9">
-                    <div class="card-body ms-2">
-                        <h2 class="account-heading" id="displayusername">{{ current_user.username }}</h2>
-                        <p id="displayemail">{{ current_user.email }}</p>
+            <br>   
+                <img src="{{ image_file }}" id="pfp"  class="img-responsive img-rounded" style="border: 3px solid #9269da;" alt="user_profilePic" width = "300" height = "300"><br>
+                        <p class="text-centered-username" id="displayusername">{{ current_user.username }}</p>
+                        <p class="text-centered" id="displayemail">{{ current_user.email }}</p>
+                        <div class="container">
+                            <button type='button' id="deletebutton" class="btn btn-secondary" data-toggle="modal" data-target="#deleteModal">Delete Account</button>
+                
                     </div>
-                </div>
+         
             </div>
-
         </div>
-
-    <div class='container'>
+                  <div class="col-md-6 mx-auto">
+                    <div class="contact_form layout_padding">
+                        <div class="heading_container heading_center">
+                            <h2> Update Account </h2>
+                        </div>
         <form method="POST", action='' enctype="multipart/form-data" novalidate>
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -97,15 +97,13 @@
                         <span class='text-danger'>{{ error }}</span><br>
                     {% endfor %}
                 {% endif %}
-            </div>
+            </div><br>
             <div class="form-group mb-3">
                 {{ form.submit(class='btn btn-secondary') }}
             </div>
         </form>
     </div>
-    <div class="container">
-        <button type='button' class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Account</button>
-    </div>
+
 </div>
 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -123,7 +121,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <form action="{{ url_for('delete_account')}}" method="POST">
-              <input type="submit" class="btn btn-danger" value='Delete'>
+              <input type="submit" class="btn btn-secondary" value='Delete'>
           </form>
         </div>
       </div>

@@ -144,3 +144,8 @@ class CheckOutForm(FlaskForm):
     expiry = StringField('Expiry', validators=[DataRequired()], render_kw={"PlaceHolder": "MM/YY"})
     cvv = StringField('CVV', validators=[DataRequired()], render_kw={"PlaceHolder": "•••"})
     submit = SubmitField('Checkout')
+
+class VerifyCheckOutForm(FlaskForm):
+    Otp_number = StringField('OTP Number', validators=[DataRequired()], render_kw={"PlaceHolder": "••••"})
+    submit = SubmitField('Verify')
+

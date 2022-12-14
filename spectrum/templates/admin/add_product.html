@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-
+<br><br>
 <div class="container tm-mt-big tm-mb-big">
     <div class="row">
           <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
@@ -8,6 +8,7 @@
               <div class="row">
                 <div class="col-12">
                   <h2 class="tm-block-title d-inline-block">Add Product</h2>
+                  <br>
                 </div>
                 <form method="POST" enctype="multipart/form-data", action="">
                 {{ form.hidden_tag() }}
@@ -40,7 +41,7 @@
 
                             <div class="form-group mb-3 col-sm-4">
                               <label
-                                for="depth">Depth</label>
+                                for="depth">Size</label>
                                 {{ form.depth(class="form-control") }}
                             </div>
                           </div>

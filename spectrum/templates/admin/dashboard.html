@@ -2,9 +2,9 @@
 
 {% block content %}
 <div class="container">
-
-
-<u><h2 class='text-center'>Dashboard</h2><u>
+<br><br>
+<h3 class='text-center'>Welcome back, <span style="text-decoration: underline; ;">{{ current_user.username }}</span>.</h3>
+<u><h1 class='text-center'>Dashboard</h1><u>
 <hr>
 
 <div class="panel-container">
@@ -12,17 +12,17 @@
         <div class="panel-body">
             <div class="btn-group">
                 <ul class="child">
-                <li class="dash_options"><a href="{{url_for('add_product')}}" class="btn btn-outline-primary btn-lg" role="button">Add Product</a></li>
-                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button">Product List</a></li>
-                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button">Product List</a></li>                      
+                <li class="dash_options"><a href="{{url_for('admin_register')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Register</a></li>
+                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Product List</a></li>
+                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Product List</a></li>                      
                 </ul>
             </div>
             <br>
             <div class="btn-group">
                 <ul class="child">
-                <li class="dash_options"><a href="{{url_for('add_product')}}" class="btn btn-outline-primary btn-lg" role="button">Add Product</a></li>
-                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button">Product List</a></li>
-                <li class="dash_options"><a href="{{url_for('sales')}}" class="btn btn-outline-primary btn-lg" role="button">Sales Report</a></li>                      
+                <li class="dash_options"><a href="{{url_for('add_product')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Add Product</a></li>
+                <li class="dash_options"><a href="{{url_for('display_product')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Product List</a></li>
+                <li class="dash_options"><a href="{{url_for('sales')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Sales Report</a></li>                      
                 </ul>
             </div>
         </div>

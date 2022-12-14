@@ -84,6 +84,19 @@ p {
   margin-bottom: 1rem;
 }
 
+.text-centered{
+  text-align: center;
+  margin-top: -1.2rem;
+  margin-bottom: 1rem;
+}
+
+.text-centered-username{
+  text-align: center;
+  font-size:x-large;
+  font-weight: 1000;
+  margin-top: -0.5rem;
+}
+
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
@@ -208,14 +221,22 @@ img {
 }
 
 #displayusername {
-text-align: center;
-justify-content: center;
+  text-align: center;
+  justify-content: center;
+
 }
 
 #displayemail{
   text-align: center;
   justify-content: center;
+	max-width:600px;
 }
+
+.qrcodeinthemiddle{
+  margin: 0 auto;
+  display: block;
+}
+
 
 svg {
   overflow: hidden;
@@ -448,6 +469,7 @@ small,
   font-size: 80%;
   font-weight: 400;
   font-style: italic;
+  color: grey;
 }
 
 mark,
@@ -4249,7 +4271,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
-  background-color: transparent;
+  background-color: transparents;
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
