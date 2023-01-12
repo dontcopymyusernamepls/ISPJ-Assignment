@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="static/syle.css" />
     <!-- responsive style -->
     <link type='text/css' href="{{ url_for('static', filename='responsive.css') }}" rel="stylesheet" />
     <script src="static/jquery-3.4.1.min.js"></script>
@@ -96,7 +97,8 @@
                             0
                           </span>
                         </a>
-                        <form class="form-inline ">
+                        <form class="form-inline " method="GET" action='/search'>
+                          <input typ="text" name="query" placeholder="Search" id="searching">
                             <button class="btn  nav_search-btn" type="submit">
                               <i class="fa fa-search" aria-hidden="true"></i>
                             </button>

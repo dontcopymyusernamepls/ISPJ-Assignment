@@ -24,6 +24,7 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(30), nullable=False)
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(100), nullable=False, unique=True)
+    salt = db.Column(db.String(32))
     password_hash = db.Column(db.String(128))
     role = db.Column(db.String(10), nullable=False, default='user')
     image_file = db.Column(db.String(20), nullable=False, default='defaultpfp.jpg')
@@ -164,4 +165,3 @@ class Customer_Payments(db.Model):
         return onetimepass.valid_totp(token, self.otp_secret)
 
 db.create_all()
-

@@ -16,10 +16,10 @@ from spectrum.forms import LoginForm, RegistrationForm, RequestResetForm, ResetP
 from spectrum.database import Staff, Users, User, Addproducts, Category, Items_In_Cart, Review, Customer_Payments, Product_Bought
 import spectrum.MyCaesarcipher as cipher
 import spectrum.rsa as rsa
+import spectrum.salting as salt
 from io import BytesIO
 import onetimepass
 import pyqrcode
-
 
 
 def trunc_datetime(someDate):
@@ -66,7 +66,9 @@ def register():
             return redirect(url_for('register'))
         
         # add new user to the database
-        user = User(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, password=form.password.data)
+        random_string = salt.generate_random()
+        password_salt = salt.append_random(form.password.data, random_string)
+        user = User(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, salt=random_string, password=password_salt)
         db.session.add(user)
         db.session.commit()
 
@@ -121,7 +123,9 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
 
-        if user is None or not user.verify_password(form.password.data) or \
+        salt = user.salt
+        password_salt = form.password.data + salt
+        if user is None or not user.verify_password(password_salt) or \
                 not user.verify_totp(form.token.data):
                 flash(f'Oops! Login unsuccessful. Please check your details.', 'danger')
                 return redirect(url_for('login'))
@@ -235,6 +239,12 @@ def product():
     products = Addproducts.query.all()
 
     return render_template('product.html', title='Products', products=products)
+
+@app.route('/search', methods=['GET'])
+def search():
+    keyword = request.args.get('query')
+    products = Addproducts.query.msearch(keyword,fields=['name', 'description'])
+    return render_template("product.html",title='Search ' + keyword, products=products)
 
 @app.route('/contact')
 def contact():
@@ -360,7 +370,7 @@ def product_details(id):
 
 @app.route('/admin/register', methods=['GET', 'POST'])
 @login_required
-@admin_required
+#@admin_required
 def admin_register():
     """User registration route."""
     #if current_user.is_authenticated:
@@ -373,7 +383,9 @@ def admin_register():
             flash('Username already exists.')
             return redirect(url_for('admin_register'))
         # add new user to the database
-        user = Staff(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, password=form.password.data, role='admin')
+        random_string = salt.generate_random()
+        password_salt = salt.append_random(form.password.data, random_string)
+        user = Staff(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, salt=random_string, password=password_salt, role='admin')
         db.session.add(user)
         db.session.commit()
 
