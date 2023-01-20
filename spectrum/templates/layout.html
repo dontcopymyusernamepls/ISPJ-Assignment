@@ -76,7 +76,11 @@
                             {% if current_user.role == 'user' %}
                                 <Li class="nav-item"><a class="nav-link" href="{{url_for('account')}}">Account</a></Li>
                                 <Li class="nav-item"><a class="nav-link" href="{{url_for('logout')}}">Log Out</a></Li>
-                                
+                                <Li class="nav-item"><a class="nav-link" href="{{url_for('cart')}}">
+                                  <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> 
+                                  Cart ({{session['shoppingcart']|length}})</a></Li>
+
+
                             {% elif current_user.role == 'admin' %}
                                 <li class="nav-item"><a class="nav-link" href="{{url_for('dashboard')}}">Dashboard</a></li>
                                 <Li class="nav-item"><a class="nav-link" href="{{url_for('logout')}}">Log Out</a></Li>

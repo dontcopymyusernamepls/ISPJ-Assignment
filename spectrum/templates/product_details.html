@@ -25,6 +25,23 @@
                         </p>
                         {% endif %}
                     </div>
+                        <span class="price">SGD{{ products.price }}</span>
+
+                        {% if products.stock == 0 %}
+                        <p>Out of Stock</p>
+                        {% else %}
+
+                        <form action="{{url_for('AddtoCart')}}" method="post">
+                            <input type="hidden" name="products_id" value="{{products.id}}">
+                            <button type="button" class="btn btn-secondary data-toggle="button">Add to Cart</button>
+                            <p></p>
+                            <label for="quantity">Quantity: </label>
+                            <input type="number" name="quantity" value="1" min="1" max="{{products.stock}}">
+                            <p></p>
+                        </form>
+                            {% endif %}
+                    </div>
+
      
                 <div class="col-md-10 col-md-offset-1">
                 <div class="fh5co-tabs animate-box">

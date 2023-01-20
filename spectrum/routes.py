@@ -268,14 +268,78 @@ def save_picture(form_pic, current_picture):
 
     return picture_fn
 
+# def MagerDicts(dict1,dict2):
+#     if isinstance(dict1, list) and isinstance(dict2,list):
+#         return dict1  + dict2
+#     if isinstance(dict1, dict) and isinstance(dict2, dict):
+#         return dict(list(dict1.items()) + list(dict2.items()))
+
+@app.route('/addtocart', methods=['POST'])
+def AddtoCart():
+    try:
+        products_id = request.form.get('products_id')
+        quantity = int(request.form.get('quantity'))
+        product = Addproducts.query.filter_by(id=products_id).all()[0]
+
+        if request.method =="POST":
+            DictItems = {products_id:{'name':product.name, 'image':product.image_1, 'price':product.price, 'quantity':quantity}}
+
+            if 'shoppingcart' in session:
+                print(session['shoppingcart'])
+                if products_id in session['shoppingcart']:
+                    for key, item in session['shoppingcart'].items():
+                        if int(key) == int(products_id):
+                            session.modified = True
+                            item['quantity'] += 1
+                    
+                else:
+                    # session['shoppingcart'] = MagerDicts(session['shoppingcart'], DictItems)
+                    return redirect(request.referrer)
+
+            else:
+                session['shoppingcart'] = DictItems
+                return redirect(request.referrer)
+
+    except Exception as e:
+        print(e)
+    finally:
+        return redirect(request.referrer)
+
+
 @app.route('/cart', methods=['GET', 'POST'])
 @login_required
 def cart():
+    if 'shoppingcart' not in session:
+        return redirect(request.referrer)
+
+    subtotal = 0
+    total = 0
+
+    for key, product in session['shoppingcart'].items():
+        subtotal += float(product['price']) * int(product['quantity'])
+        total = float("%.2f" % (1 * subtotal))
+
     cart_items = Items_In_Cart.query.filter_by(user_id=current_user.id).all()
     items = 0
     for item in cart_items:
         items += 1
-    return render_template('cart.html', title='Shopping Cart', current_user=current_user, cart_items=cart_items, items=items)
+    return render_template('cart.html', title='Shopping Cart', current_user=current_user, cart_items=cart_items, items=items, total=total)
+
+# @app.route('/deleteitem/<int:id>')
+# def deleteitem(id):
+#     if 'shoppingcart' not in session:
+#         return redirect(url_for('home'))
+#     try:
+#         session.modified = True
+#         for key , item in session['shoppingcart'].items():
+#             if int(key) == id:
+#                 session['shoppingcart'].pop(key, None)
+#                 return redirect(url_for('cart'))
+#     except Exception as e:
+#         print(e)
+#         return redirect(url_for('cart'))
+
+
 
 # Checkout  
 @app.route('/checkout', methods=['POST', 'GET'])
@@ -370,7 +434,7 @@ def product_details(id):
 
 @app.route('/admin/register', methods=['GET', 'POST'])
 @login_required
-#@admin_required
+@admin_required
 def admin_register():
     """User registration route."""
     #if current_user.is_authenticated:
