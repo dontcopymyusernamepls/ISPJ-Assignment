@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% block content %}
+<br><br>
+<div class="container tm-mt-big tm-mb-big">
+    <div class="row">
+          <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+            <div class="tm-bg-primary-dark tm-block tm-block-h-auto" id="add_productform">
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="tm-block-title d-inline-block">Add Product</h2>
+                  <br>
+                </div>
+                <form method="POST" enctype="multipart/form-data", action="">
+                {{ form.hidden_tag() }}
+                <div>
+
+                    <div class="row tm-edit-product-row">
+                        <div class="col-xl-6 col-lg-6 col-md-12">
+                          <form action="" class="tm-edit-product-form">
+
+                            <div class="form-group mb-3">
+                                <label for="name">Product Name</label>
+                                {{ form.name(class="form-control") }}
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="description">Product Description</label>
+                                {{ form.description(class="form-control", rows="10") }}
+                            </div>
+                            <div class="row">
+                            <div class="form-group mb-3  col-sm-4">
+                              <label for="length">Length</label>
+                              {{ form.length(class="form-control") }}
+                            </div>
+    
+                            <div class="form-group mb-3 col-sm-4">
+                              <label
+                                for="width">Width</label>
+                                {{ form.width(class="form-control") }}
+                            </div>
+
+                            <div class="form-group mb-3 col-sm-4">
+                              <label
+                                for="depth">Size</label>
+                                {{ form.depth(class="form-control") }}
+                            </div>
+                          </div>
+
+                            <div class="form-group mb-3">
+                                <label for="category">{{form.category.label}}</label>
+                                {{form.category(class="form-control")}}
+                            </div>
+                            
+                            <div class="row">
+                                <div class="form-group mb-3 col-xs-12 col-sm-6">
+                                    <label for="price">Price</label>
+                                    {{ form.price(class="form-control") }}
+                                  </div>
+          
+                                  <div class="form-group mb-3 col-xs-12 col-sm-6">
+                                    <label
+                                      for="stock">Stock</label>
+                                      {{ form.stock(class="form-control") }}
+                                  </div>
+                            </div>
+                        </div>
+
+                            <div class="form-group mb-3">
+                            <label>{{form.image_1.label}}</label>
+                            {{ form.image_1 }}
+                           
+                            <hr>
+                            
+                            </div>
+                
+                            
+      
+                <p><input type="submit" value="{% if getproduct %}Update {% else %}Add{% endif %} product" class="btn btn-primary btn-block mx-auto">
+                </form>
+            </div>
+      <div class="col-md-1"></div>
+    </div>
+</div>
+{% endblock content %}

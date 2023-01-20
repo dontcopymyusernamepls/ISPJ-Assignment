@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<section class="login_section">
+    <div class="contact_container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="contact_form layout_padding">
+              <div class="heading_container heading_center">
+                <h2>
+                  Login
+                </h2>
+              </div>
+              <form method="POST", action='' novalidate>
+                {{ form.csrf_token }}
+                <div class='form-group mb-3'>
+                    {{ form.email.label(class='form-label') }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                
+
+                    <div class='form-group mb-3'>
+                        {{ form.password.label(class='form-label') }}
+                        {% if form.password.errors %}
+                            {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                        {% else %}
+                            {{ form.password(class="form-control form-control-lg") }}
+                        {% endif %}
+                        <small class="text-muted">
+                            <a href="{{ url_for('reset_password') }}">Forgot Password?</a>
+                        </small>
+                    </div>  
+
+                    <div class='form-group mb-3'>
+                      {{ form.token.label(class='form-label') }}
+                      {% if form.token.errors %}
+                          {{ form.token(class="form-control form-control-lg is-invalid") }}
+                              <div class="invalid-feedback">
+                                  {% for error in form.token.errors %}
+                                      <span>{{ error }}</span>
+                                  {% endfor %}
+                              </div>
+                      {% else %}
+                          {{ form.token(class="form-control form-control-lg") }}
+                      {% endif %}
+                      </div>
+
+                    <small class="text-muted" id="">
+                        {{ form.remember(class='form-check-input') }}
+                        {{ form.remember.label(class="form-check-label") }}
+                    </small>
+                    <br><br>
+               
+              
+                <div class="btn-box">
+            
+                        {{ form.submit(class='btn btn-secondary') }}
+                  
+                </div>
+              </form>
+              <br>
+              <div class='container text-center'>
+                <small class="text-muted">
+                    New to this site? Register<a class="ml-2" href="register">here</a>
+                </small>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+    <!-- line 38:{{ url_for('reset_password') }}
+    line 55: {{ url_for('register') }} -->
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+

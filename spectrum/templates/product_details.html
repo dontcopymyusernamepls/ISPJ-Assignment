@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+{% block content %}
+<br>
+<div id="fh5co-product">
+    <div class="container" id="product_details"> 
+        <div class="row">
+            <!-- <div id="product_details"> -->
+            <div id="left">
+                <img src="{{url_for('static',filename='images/' + products.image_1)}}" alt="{{products.name}}" width="300" height="300">
+                <br><br>
+                <ul class="fh5co-tab-nav">
+                    <li class="active"><a href="#" data-tab="1"><span class="icon visible-xs"><i class="icon-file"></i></span><span class="hidden-xs">Product Details</span></a></li>
+                    <li><a href="#" data-tab="2"><span class="icon visible-xs"><i class="icon-bar-graph"></i></span><span class="hidden-xs">Specification</span></a></li>
+                    <li><a href="#" data-tab="3"><span class="icon visible-xs"><i class="icon-star"></i></span><span class="hidden-xs">Feedback &amp; Ratings</span></a></li>
+                </ul>
+            </div>
+            <div id="right">
+                    <div class="col-md-8 col-md-offset-2 fh5co-heading">
+                        <h2>{{ products.name }}</h2>
+                        <span class="price">SGD{{ products.price }}</span>
+
+                        {% if products.stock == 0 %}
+                        <p>Out of Stock</p>
+                        {% else %}
+
+                        <form action="{{url_for('AddtoCart')}}" method="post">
+                            <input type="hidden" name="products_id" value="{{products.id}}">
+                            <button type="button" class="btn btn-secondary data-toggle="button">Add to Cart</button>
+                            <p></p>
+                            <label for="quantity">Quantity: </label>
+                            <input type="number" name="quantity" value="1" min="1" max="{{products.stock}}">
+                            <p></p>
+                        </form>
+                            {% endif %}
+                    </div>
+
+     
+                <div class="col-md-10 col-md-offset-1">
+                <div class="fh5co-tabs animate-box">
+                    
+
+                    <!-- Tabs -->
+                    <div class="fh5co-tab-content-wrap">
+
+                        <div class="fh5co-tab-content tab-content active" data-tab-content="1">
+                            <div class="col-md-10 col-md-offset-1">
+                                
+                                <h2>{{ products.name }}</h2>
+                                <p> {{ products.description }} </p>
+                            </div>
+                        </div>
+
+
+                        <div class="fh5co-tab-content tab-content" data-tab-content="3">
+                            <div class="col-md-12">
+                                <h3>{{ product_reviews.count() }} Reviews</h3>
+                                <div class="feed">
+                                    {% for review in product_reviews %}
+                                    <div class='container'>
+                                    <div class='row'>
+                                        <div class='col-md-1 image pull-left'>
+                                            <img src="{{url_for('static',filename='profile_pics/' + review.author.image_file)}}" alt="{{review.author.username}}" class="img responsive img-rounded" style="border: 1px solid black;" width="5" height="60">
+                                        </div>
+                                        <blockquote class='col-md-offset-1'>
+                                            <p>{{ review.user_review }}</p>
+                                        </blockquote>
+                                        <h3 class='col-md-offset-1'>&mdash; {{ review.author.username }}</h3>
+                                        <span class="rate">
+                                            {% for star in range(review.rating) %}
+                                            <i class="icon-star2"></i>
+                                            {% endfor %}
+                                        </span>
+                                    </div>
+                                    </div>
+                                    {% endfor %}
+                                    {% if current_user.role == 'user' and product_bought %}
+                                    <div>
+                                        <form method="POST" action="">
+                                            {{ form.hidden_tag() }}
+                                            <fieldset>
+                                                <legend class="border-bottom mb-4 text-center">Review</legend>
+                                                <div class="form-group">
+                                                    {{ form.review.label(class="form-control-label") }}
+                                                    {% if form.review.errors %}
+                                                        {{ form.review(class="form-control form-control-lg is-invalid") }}
+                                                        <div class="invalid-feedback">
+                                                            {% for error in form.review.errors %}
+                                                                <span>{{ error }}</span>
+                                                            {% endfor %}
+                                                        </div>
+                                                    {% else %}
+                                                        {{ form.review(class="form-control form-control-lg") }}
+                                                    {% endif %}
+                                                </div>
+                                            </fieldset>
+                                            <div>
+                                                {{ form.rating.label(class="form-control-label") }}
+                                                {{form.rating(class='form-control')}}
+                                            </div>
+                                            <hr>
+                                            <div class="form-group">
+                                                {{ form.submit(class="btn btn-outline-info") }}
+                                            </div>
+                                        </form>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            <!-- </div> -->
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

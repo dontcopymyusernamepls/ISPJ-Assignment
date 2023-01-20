@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+<br><br>
+<h2 class='text-center'>Sales Report</h2>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">
+                Current Month sales
+            </h3>
+            <h3 class="text-center">{{ total_count }}</h3>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center">
+                Current Month Profit
+            </h3>
+            <h3 class="text-center">SGD${{ total_profit }}</h3>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="chart" id="bargraph">
+            <!--Plotly-->
+            <script src="{{ url_for('static', filename='plotly-latest.min.js') }}"></script>
+            <script src="{{ url_for('static', filename='d3.min.js') }}"></script>
+            <script type='text/javascript'>
+                // var graphs = {{plot | safe}};
+                Plotly.plot('bargraph',graphs,{});
+            </script>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <table class="table tbale-sm">
+            <thead>
+                <th>Username</th>
+                <th>Product ID</th>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                <legend class="text-center">Item Sold Today</legend>
+                {% for product in current_day_products %}
+                <tr>
+                  <td>{{ product.product_id_bought.username }}</td>
+                  <td>{{ product.product_id}}</td>
+                  <td> <img src="{{url_for('static',filename='product_pics/' + product.image)}}" alt="{{product.name}}" width="50" height="50"></td>
+                  <td>{{ product.product_name }}</td>
+                  <td>{{ product.quantity }}</td>
+                  <td>{{ product.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

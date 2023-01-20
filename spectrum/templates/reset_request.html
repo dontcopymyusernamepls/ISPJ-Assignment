@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section class="login_section">
+    <div class="contact_container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="contact_form layout_padding">
+              <div class="heading_container heading_center">
+                <h2>
+                  Reset Password
+                </h2>
+              </div>
+              <form method="POST", action='' novalidate>
+                {{ form.hidden_tag() }}
+        
+                <div class='form-group mb-3'>
+                    {{ form.email.label(class='form-label') }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+        
+                <div class='form-group mb-3'>
+                    {{ form.submit(class='btn btn-secondary') }}
+                </div>
+            </form>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div>
+    <p class='text-center'>Verify Confirmation</p>
+</div>
+<section class="page-wrapper success-msg">
+    <div class="container">
+      <div class="row">
+        <div class="form-group mb-3 col-xs-12 col-sm-6">
+            <label for=otp">OTP<span class="required">*</span></label>
+            {{form.otp(class="form-control")}}
+        </div>
+        <li>
+            <span> Please proceed to verify OTP <a href="{{url_for('verify')}}">Verify</span>
+        </li>
+      </div>
+    </div>
+</section>
+<div class='form-group mb-3 col-xs-12 col-sm-6'>
+    {{ form.otp.label(class='form-label') }}
+    {% if form.otp.errors %}
+        {{ form.otp(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+                {% for error in form.otp.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+    {% else %}
+        {{ form.otp(class="form-control form-control-lg") }}
+    {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<section class="login_section">
+    <div class="contact_container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="contact_form layout_padding">
+              <div class="heading_container heading_center">
+                <h2> Account Information </h2>
+            </div>
+            <br>   
+                <img src="{{ image_file }}" id="pfp"  class="img-responsive img-rounded" style="border: 3px solid #9269da;" alt="user_profilePic" width = "300" height = "300"><br>
+                        <p class="text-centered-username" id="displayusername">{{ current_user.username }}</p>
+                        <p class="text-centered" id="displayemail">{{ current_user.email }}</p>
+                        <div class="container">
+                            <button type='button' id="deletebutton" class="btn btn-secondary" data-toggle="modal" data-target="#deleteModal">Delete Account</button>
+                
+                    </div>
+         
+            </div>
+        </div>
+                  <div class="col-md-6 mx-auto">
+                    <div class="contact_form layout_padding">
+                        <div class="heading_container heading_center">
+                            <h2> Update Account </h2>
+                        </div>
+        <form method="POST", action='' enctype="multipart/form-data" novalidate>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                
+            </fieldset>
+    
+            <div class='form-group mb-3'>
+                {{ form.first_name.label(class='form-control-label') }}
+    
+                {% if form.first_name.errors %}
+                    {{ form.first_name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.first_name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                            </div>
+                {% else %}
+                    {{ form.first_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+    
+            <div class='form-group mb-3'>
+                {{ form.last_name.label(class='form-control-label') }}
+                {% if form.last_name.errors %}
+                    {{ form.last_name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.last_name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                            </div>
+                {% else %}
+                    {{ form.last_name(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+    
+            <div class='form-group mb-3'>
+                {{ form.username.label(class='form-control-label') }}
+                {% if form.username.errors %}
+                    {{ form.username(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                            </div>
+                {% else %}
+                    {{ form.username(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+    
+            <div class='form-group mb-3'>
+                {{ form.email.label(class='form-control-label') }}
+                {% if form.email.errors %}
+                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                            </div>
+                {% else %}
+                    {{ form.email(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class='form-group mb-3'>
+                {{ form.picture.label }}
+                {{ form.picture(class='form-control-file') }}
+                {% if form.picture.errors %}
+                    {% for error in form.picture.errors %}
+                        <span class='text-danger'>{{ error }}</span><br>
+                    {% endfor %}
+                {% endif %}
+            </div><br>
+            <div class="form-group mb-3">
+                {{ form.submit(class='btn btn-secondary') }}
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Account?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          You will not be able to login using this email anymore unless you register again.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete_account')}}" method="POST">
+              <input type="submit" class="btn btn-secondary" value='Delete'>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+

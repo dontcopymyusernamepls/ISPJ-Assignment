@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section class="login_section">
+    <div class="contact_container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="contact_form layout_padding">
+                <div class="heading_container heading_center">
+    <h2>2-FA Setup</h2>
+</div>
+<div>
+    <p class="text-centered">You are almost done! Please scan the following QR Code to receive an One Time Pin.</p>
+    <p><img id="qrcode" class="qrcodeinthemiddle" src="{{ url_for('qrcode') }}" style="border: 3px solid #9269da;" alt="2fa_qrcode" width = "300" height = "300"></p>
+    <p class="text-centered">I'm done, take me to the <a href="{{ url_for('login') }}">Login</a> page!</p>
+    </div>
+    </div>
+</div>
+{% endblock content %}

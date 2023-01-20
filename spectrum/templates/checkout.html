@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div>
+    <p class='text-center'>Check Out</p>
+</div>
+
+<div class="page-wrapper">
+   <div class="checkout shopping">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-8">
+               <div class="block billing-details">
+                  <h4 class="widget-title">Billing Details</h4>
+                  <hr>
+                  <form method="POST" enctype="multipart/form-data">
+                     {{ form.hidden_tag() }}
+                  <div class="form-group">
+                     <label for="full_name">Full Name<span class="required">*</span></label>
+                     {% if form.full_name.errors %}
+                     {{ form.full_name(class="form-control form-control-lg is-invalid") }}
+                     <div class="invalid-feedback">
+                        {% for error in form.full_name.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                  </div>
+                  {% else %}
+                     {{ form.full_name(class="form-control form-control-lg") }}
+                  {% endif %}
+                  </div>
+                  <div class="form-group">
+                     <label for="user_address">Address<span class="required">*</span></label>
+                     {{form.address(class="form-control")}}
+                  </div>
+                  <div class="form-group">
+                     <label for="postal_code">Postal Code<span class="required">*</span></label>
+                     {{form.postal_code(class="form-control")}}
+                  </div>
+               </div>
+               <br><br>
+               <div class="block">
+                  <h4 class="widget-title">Payment Details</h4>
+                  <hr>
+                  <div class="checkout-product-details">
+                     <div class="payment">
+                        <div class="card-details">
+                           <div class="form-group">
+                              <label for="card-number">Card Number <span class="required">*</span></label>
+                              {{form.card_number(class="form-control")}} 
+                           </div>
+
+                           <div class="row">
+                              <div class="form-group mb-3 col-xs-12 col-sm-6">
+                              <label for="card-expiry">Expiry (MM/YY) <span class="required">*</span></label>
+                              {{form.expiry(class="form-control")}}
+                           </div>
+                           <div class="form-group mb-3 col-xs-12 col-sm-6">
+                              <label for="card-cvc">CVV<span class="required">*</span></label>
+                              {{form.cvv(class="form-control")}}
+                           </div>
+                              <div>
+                                 {{form.submit(class='btn btn-primary')}} 
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="product-checkout-details">
+                  <div class="block">
+                     <h4 class="widget-title">Order Summary</h4>
+                     <hr>
+                     <div class="media product-card">
+                        {% for product in cart_items %}
+                        <a class="pull-left" href="">
+                            <img src="{{url_for('static',filename='product_pics/' + product.image_1)}}" alt="{{product.name}}" width="50" height="50">
+                        </a>
+                        <div class="media-body">
+                           <h4 class="media-heading">{{ product.name }}</h4>
+                           <p class="price">{{ product.quantity }} x ${{ product.price }}</p>
+                           <span class="remove"><a href="{{ url_for('delete_cart_item_checkout', id=product.id)}}">Remove</a></span>
+                           <hr>
+                        </div>
+                        {% endfor %}
+                     
+                     <hr>
+                     <ul class="summary_prices">
+                        <li>
+                           <span>Subtotal: SGD {{ subtotal }}</span>
+                           <span class="price"></span>
+                        </li>
+                        <li>
+                           <span>Shipping: SGD 10</span>
+                        </li>
+                        <li>
+                           <span> Total: SGD {{ total }}</span>
+                        </li>
+                     </ul>
+                     <hr>
+                     <div class="verified-icon">
+                        <img src="/static/images/verified.png" width="330" height="38">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}
