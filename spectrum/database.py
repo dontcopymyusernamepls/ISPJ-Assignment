@@ -1,6 +1,5 @@
 from email.policy import default
 from spectrum import db, login_manager, app
-from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from flask_login import UserMixin
 from datetime import datetime, date
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -57,7 +56,7 @@ class User(db.Model, UserMixin):
             .format(self.username, self.otp_secret)
 
     def verify_totp(self, token):
-        return onetimepass.valid_totp(token, self.otp_secret)
+        return onetimepass.valid_totp(int(token), self.otp_secret)
 
 
 
@@ -164,4 +163,3 @@ class Customer_Payments(db.Model):
     def verify_totp(self, token):
         return onetimepass.valid_totp(token, self.otp_secret)
 
-db.create_all()

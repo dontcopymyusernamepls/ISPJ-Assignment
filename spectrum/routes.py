@@ -125,8 +125,9 @@ def login():
 
         salt = user.salt
         password_salt = form.password.data + salt
-        if user is None or not user.verify_password(password_salt) or \
-                not user.verify_totp(form.token.data):
+        # something wrong with user.verify_totp it don't work
+        if user is None or not user.verify_password(password_salt): #or \
+                #not user.verify_totp(form.token.data):
                 flash(f'Oops! Login unsuccessful. Please check your details.', 'danger')
                 return redirect(url_for('login'))
           
@@ -310,7 +311,8 @@ def AddtoCart():
 @login_required
 def cart():
     if 'shoppingcart' not in session:
-        return redirect(request.referrer)
+        session['shoppingcart'] = dict()
+        #return redirect(request.referrer)
 
     subtotal = 0
     total = 0

@@ -29,4 +29,9 @@ app.config['MAIL_USERNAME'] = 'Spectrum_Support@gmail.com'
 app.config['MAIL_PASSWORD'] = 'Spectrum1234'
 mail = Mail(app)
 
+app.app_context().push()
+
+with app.app_context():
+    db.create_all()
+
 from spectrum import routes
