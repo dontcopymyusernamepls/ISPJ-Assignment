@@ -7,6 +7,7 @@ from flask_msearch import Search
 from flask_mail import Mail
 import os
 from datetime import timedelta
+from flask_session import Session
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'this-is-secret-key'
@@ -14,6 +15,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['USE_SESSION_FOR_NEXT'] = True
 app.config['REMEMBER_COOKIE_DURATION'] = timedelta(seconds=20)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=30)
+Session(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)

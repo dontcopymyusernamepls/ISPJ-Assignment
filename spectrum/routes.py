@@ -130,7 +130,13 @@ def login():
                 #not user.verify_totp(form.token.data):
                 flash(f'Oops! Login unsuccessful. Please check your details.', 'danger')
                 return redirect(url_for('login'))
-          
+        
+        if request.method == "POST":
+            # record the user name
+            session["email"] = request.form.get("email")
+            if session.get('email'):
+                flash("Welcome {}!".format(session.get('email')))
+                
         # log user in
         login_user(user)
         flash('You are now logged in!')
@@ -138,9 +144,19 @@ def login():
         return redirect(next) if next else redirect(url_for('home'))
     return render_template('login.html', title='Login',form=form)
 
+
+@app.route('/get_session')
+def get_session():
+    if not session.get("email"):
+        return redirect("/login")
+    return render_template('get_session.html')
+
+
 @app.route('/logout')
 def logout():
     logout_user()
+    session["email"] = None
+    flash('You are now logged out.')
     return redirect(url_for('home'))
 
 

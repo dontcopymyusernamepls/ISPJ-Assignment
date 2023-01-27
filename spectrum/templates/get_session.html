@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<section class="page-wrapper success-msg">
+    <div class="container">
+    
+        <div class="block text-center" id="confirm">
+            {% if session['email'] %}
+                <h1>Welcome {{ session['email'] }}!</h1>
+            {% else %}
+                <h1>Welcome! Please enter your email <a href="{{ url_for('set_email') }}">here.</a></h1>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}
+
