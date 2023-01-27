@@ -391,10 +391,10 @@ def checkout_details():
 
     if form.validate_on_submit():
         full_name = form.full_name.data
-        en_address = rsa.encrypt(public_key, form.address.data)
+        en_address = rsa.encrypt(public_key, form.address.data.encode('utf-8'))
         postal_code = form.postal_code.data
-        en_card_number = rsa.encrypt(public_key, form.card_number.data)
-        en_cvv = rsa.encrypt(public_key, form.cvv.data)
+        en_card_number = rsa.encrypt(public_key, form.card_number.data.encode('utf-8'))
+        en_cvv = rsa.encrypt(public_key, form.cvv.data.encode('utf-8'))
         checkout_details = Customer_Payments(full_name=full_name, address=en_address, postal_code=postal_code, card_number=en_card_number, cvv=en_cvv)
         db.session.add(checkout_details)
         
