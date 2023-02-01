@@ -1,0 +1,27 @@
+#
+#  Deploy Spectrum
+#  $ docker-compose up -d
+#
+
+version: '3.7'
+services: 
+  spectrum-app:
+    container_name: spectrum-app
+    image: spectrum-app
+    restart: always
+    volumes:
+    - ./spectrum:/app/spectrum
+    - ./a_private.pem:/app/a_private.pem
+    - ./a_public.pem:/app/a_public.pem
+    - ./requirements.txt:/app/requirement.txt
+    - ./flask_session:/app/flask_session
+    - ./logs:/app/logs
+    - ./instance:/app/instance
+    - ./run.py:/app/run.py
+
+  firewall:
+    container_name: firewall
+    image: firewall
+    ports:
+    - "8088:80"
+    restart: always

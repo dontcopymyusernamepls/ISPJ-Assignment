@@ -33,7 +33,7 @@
 
                         <form action="{{url_for('AddtoCart')}}" method="post">
                             <input type="hidden" name="products_id" value="{{products.id}}">
-                            <button type="button" class="btn btn-secondary data-toggle="button">Add to Cart</button>
+                            <button type="button" class="btn btn-secondary" data-toggle="button">Add to Cart</button>
                             <p></p>
                             <label for="quantity">Quantity: </label>
                             <input type="number" name="quantity" value="1" min="1" max="{{products.stock}}">
