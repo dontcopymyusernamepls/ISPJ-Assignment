@@ -1,0 +1,17 @@
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:03:26] REQUEST[GET] JuneLee@gmail.com logged in successfully.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:04:29] REQUEST[POST] xuan45@gmail.com has created an account.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:28:46] REQUEST[POST] AdminTan@dc.com has created an account.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:29:17] REQUEST[POST] AdminTan@dc.com logged in successfully.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:39:48] REQUEST[GET] AdminTan@dc.com logged out.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:40:36] REQUEST[POST] AdminTan@dc.com encountered unsuccessful login.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:43:26] REQUEST[POST] AdminTan@dc.com encountered unsuccessful login.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:44:03] REQUEST[POST] Loli@dc.com logged in successfully.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:44:38] REQUEST[POST] AdminTan@dc.com encountered unsuccessful login.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:44:58] REQUEST[GET] Loli@dc.com logged out.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:45:44] REQUEST[POST] CQY@ADMIN.COM has created an account.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:46:09] REQUEST[POST] CQY@ADMIN.COM logged in successfully.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:46:31] REQUEST[GET] CQY@ADMIN.COM logged out.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:46:47] REQUEST[POST] Loli@dc.com logged in successfully.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:49:40] REQUEST[POST] CQY@ADMIN.COM logged in successfully.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:53:31] REQUEST[GET] CQY@ADMIN.COM logged out.
+ INFO users: 127.0.0.1 - - [02/Feb/2023 01:54:29] REQUEST[POST] Loli@dc.com logged in successfully.

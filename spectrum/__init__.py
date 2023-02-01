@@ -9,6 +9,16 @@ import os
 from datetime import timedelta
 import spectrum.rsa as rsa
 from flask_session import Session
+import logging
+from spectrum.logger import setup_logger
+
+root_logger = setup_logger('', 'logs/root.log')
+users_logger = setup_logger('users', 'logs/users.log')
+admin_logger = setup_logger('admin', 'logs/admin.log')
+error_logger = setup_logger('api', 'logs/error.log')
+product_logger = setup_logger('product', 'logs/product.log')
+
+logging.basicConfig(filename='app.log', level=logging.DEBUG, format='[%(asctime)s] %(levelname)s %(name)s %(threadName)s : %(message)s')
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'this-is-secret-key'

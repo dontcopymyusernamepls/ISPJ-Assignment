@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+<br><br>
+<h3 class='text-center'>Welcome back, <span style="text-decoration: underline; ;">{{ current_user.username }}</span>.</h3>
+<u><h1 class='text-center'>Logs</h1><u>
+<hr>
+
+<div class="panel-container">
+    <div class="row">
+        <div class="panel-body">
+            <div class="btn-group">
+                <ul class="child">
+                <li class="dash_options"><a href="{{url_for('users_logs')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">User Log</a></li>
+                <li class="dash_options"><a href="{{url_for('admin_logs')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Admin Log</a></li>
+                <li class="dash_options"><a href="{{url_for('product_logs')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Product Log</a></li>                      
+                </ul>
+            </div>
+            <br>
+            <div class="btn-group">
+                <ul class="child">
+                <li class="dash_options"><a href="{{url_for('error_logs')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Error Log</a></li>
+                <li class="dash_options"><a href="{{url_for('root_logs')}}" class="btn btn-outline-primary btn-lg" role="button" style="width:200px;">Root Log</a></li>
+               
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock content %}
