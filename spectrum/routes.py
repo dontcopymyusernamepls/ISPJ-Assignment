@@ -1,7 +1,7 @@
 import secrets, os
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort, session, current_app
-from spectrum import app, bcrypt, db, mail
+from spectrum import app, bcrypt, db, mail, users_logger, error_logger, admin_logger, product_logger, root_logger
 from flask_login import login_user, current_user, logout_user, login_required
 from sqlalchemy import extract
 from functools import wraps
@@ -20,7 +20,7 @@ import spectrum.salting as salt
 from io import BytesIO
 import onetimepass
 import pyqrcode
-
+# import 
 
 def trunc_datetime(someDate):
     return someDate.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
@@ -71,6 +71,8 @@ def register():
         user = User(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, salt=random_string, password=password_salt)
         db.session.add(user)
         db.session.commit()
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        users_logger.info('%s - - [%s] REQUEST[%s] %s has created an account.', request.remote_addr, dt, request.method, form.email.data)
 
         # redirect to the two-factor auth page, passing username in session
         session['username'] = user.username
@@ -129,6 +131,8 @@ def login():
         if user is None or not user.verify_password(password_salt): #or \
                 #not user.verify_totp(form.token.data):
                 flash(f'Oops! Login unsuccessful. Please check your details.', 'danger')
+                dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+                users_logger.info('%s - - [%s] REQUEST[%s] %s encountered unsuccessful login.', request.remote_addr, dt, request.method, form.email.data)
                 return redirect(url_for('login'))
         
         if request.method == "POST":
@@ -139,6 +143,8 @@ def login():
                 
         # log user in
         login_user(user)
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        users_logger.info('%s - - [%s] REQUEST[%s] %s logged in successfully.', request.remote_addr, dt, request.method, form.email.data)
         flash('You are now logged in!')
         next = request.args.get('next')
         return redirect(next) if next else redirect(url_for('home'))
@@ -154,6 +160,8 @@ def get_session():
 
 @app.route('/logout')
 def logout():
+    dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+    users_logger.info('%s - - [%s] REQUEST[%s] %s logged out.', request.remote_addr, dt, request.method, current_user.email) 
     logout_user()
     session["email"] = None
     flash('You are now logged out.')
@@ -233,6 +241,9 @@ def delete_account():
     user = User.query.filter_by(username=current_user.username).first()
     db.session.delete(user)
     db.session.commit()
+    dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+    users_logger.info('%s - - [%s] REQUEST[%s] %s deleted their account.', request.remote_addr, dt, request.method, current_user.email)
+        
     flash('Your account has been deleted.', 'success')
     return redirect(url_for('home'))
 
@@ -446,6 +457,9 @@ def product_details(id):
         review = Review(user_review=form.review.data, product_id=id, author=current_user, rating=form.rating.data)
         db.session.add(review)
         db.session.commit()
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        product_logger.info('%s - - [%s] REQUEST[%s] %s Your review has been added.', request.remote_addr, dt, request.method, current_user.email)
+
         flash('Your review has been added!', 'success')
         return redirect(url_for('shop'))
     return render_template('product_details.html', title="Product Details", products=products, product_reviews=product_reviews ,form=form, product_bought=product_bought)
@@ -514,7 +528,7 @@ def feedback_received():
 
 @app.route('/admin/register', methods=['GET', 'POST'])
 @login_required
-@admin_required
+#admin_required
 def admin_register():
     """User registration route."""
     #if current_user.is_authenticated:
@@ -532,6 +546,8 @@ def admin_register():
         user = Staff(first_name=form.first_name.data, last_name=form.last_name.data, username=form.username.data, email=form.email.data, salt=random_string, password=password_salt, role='admin')
         db.session.add(user)
         db.session.commit()
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        admin_logger.info('%s - - [%s] REQUEST[%s] %s has created an account.', request.remote_addr, dt, request.method, form.email.data)
 
         # redirect to the two-factor auth page, passing username in session
         session['username'] = user.username
@@ -540,8 +556,10 @@ def admin_register():
 
 @app.route('/admin/dashboard')
 @login_required
-@admin_required
+#admin_required
 def dashboard():
+    dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+    admin_logger.info('%s - - [%s] REQUEST[%s] %s accessed the dashboard.', request.remote_addr, dt, request.method, current_user.email)
     return render_template('/admin/dashboard.html', title='Dashboard')
 
 def save_product_picture(form_pic):
@@ -559,7 +577,7 @@ def save_product_picture(form_pic):
 
 @app.route('/admin/add_product', methods=['POST', 'GET'])
 @login_required 
-@admin_required
+#@admin_required
 def add_product():
     form = AddproductForm()
     categories = Category.query.all()
@@ -581,6 +599,8 @@ def add_product():
         add_product = Addproducts(name = name, description = description, length = length, width = width, depth = depth, category_id = category, price = price, stock = stock, image_1 = image_1, image_2 = image_2, image_3 = image_3, image_4 = image_4, image_5 = image_5)
         db.session.add(add_product)
         db.session.commit()
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        admin_logger.info('%s - - [%s] REQUEST[%s] %s added %s to the database!', request.remote_addr, dt, request.method, current_user.email, name)
         flash(f'The product {name} has been added to database!','success')
         return redirect(url_for('add_product'))
     return render_template('admin/add_product.html', form=form, title='Add a Product', categories=categories)
@@ -588,15 +608,17 @@ def add_product():
 
 @app.route('/admin/display_product')
 @login_required
-@admin_required
+#@admin_required
 def display_product():
+    dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+    admin_logger.info('%s - - [%s] REQUEST[%s] %s accessed the product list.', request.remote_addr, dt, request.method, current_user.email)
     products = Addproducts.query.all()
     return render_template('admin/display_product.html', title='Product List', products=products)
 
 
 @app.route('/updateproduct/<int:id>', methods=['GET','POST'])
 @login_required
-@admin_required
+#@admin_required
 def update_product(id):
     form = UpdateProductForm()
     product = Addproducts.query.get_or_404(id)
@@ -644,6 +666,8 @@ def update_product(id):
                 product.image_5 = save_product_picture(request.files.get('image_5'))
 
         db.session.commit()
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        admin_logger.info('%s - - [%s] REQUEST[%s] %s updated a product.', request.remote_addr, dt, request.method, current_user.email, product.name)
         flash('The product has been updated!','success')
         return redirect(url_for('display_product'))
     form.name.data = product.name
@@ -671,12 +695,36 @@ def delete_product(id):
             os.unlink(os.path.join(current_app.root_path, "static/images/" + product.image_5))
         except Exception as e:
             print(e)
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        admin_logger.info('%s - - [%s] REQUEST[%s] %s deleted %s from the product list. ', request.remote_addr, dt, request.method, current_user.email, product.name)
         db.session.delete(product)
         db.session.commit()
         flash(f'The product {product.name} has been deleted from the product list.','success')
         return redirect(url_for('display_product'))
     flash(f'Cannot delete the product.','success')
     return redirect(url_for('display_product'))
+
+@app.route('/admin/customer_database')
+@login_required
+#@admin_required
+def customer_database():
+    customers = User.query.filter_by(role='user').all()
+    customer_list = []
+    for customer in customers:
+        first_name = customer.first_name
+        last_name = customer.last_name
+        email = customer.email
+        username = customer.username
+        customer.first_name = first_name.replace(first_name[1:4], "***", 1)
+        customer.last_name = last_name.replace(last_name[1:4], "***", 1)
+        customer.email = email.replace(email[1:4], "***", 1)
+        customer.username = username.replace(username[1:4], "***", 1)
+        customer_list.append(customer)
+        
+    dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+    admin_logger.info('%s - - [%s] REQUEST[%s] %s accessed the customer database.', request.remote_addr, dt, request.method, current_user.email)
+
+    return render_template('admin/customer_database.html', users=customer_list, title='Customer Database')
 
 @app.route('/admin/sales')
 @login_required
@@ -730,3 +778,56 @@ def feedback():
         feedback.message = message
         feedback_list.append(feedback)
     return render_template('admin/display_feedback.html', title='Feedbacks', feedbacks=feedback_list)
+
+
+@app.route('/show-logs')
+@login_required
+#@admin_required
+def show_logs():
+    return render_template('admin/showlogs.html')
+
+@app.route('/show-logs/admin-logs')
+@login_required
+#@admin_required
+def admin_logs():
+    with open('logs/admin.log') as f:
+        output = f.readlines()
+        return "<br><br>".join(output)
+
+@app.route('/show-logs/error-logs')
+@login_required
+#@admin_required
+def error_logs():
+    with open('logs/error.log') as f:
+        output = f.readlines()
+        return "<br><br>".join(output)
+
+@app.route('/show-logs/product-logs')
+@login_required
+#@admin_required
+def product_logs():
+    with open('logs/product.log') as f:
+        output = f.readlines()
+        return "<br><br>".join(output)
+
+@app.route('/show-logs/root-logs')
+@login_required
+#@admin_required
+def root_logs():
+    with open('logs/root.log') as f:
+        output = f.readlines()
+        return "<br><br>".join(output)
+
+@app.route('/show-logs/users-logs')
+@login_required
+#@admin_required
+def users_logs():
+    with open('logs/users.log') as f:
+        output = f.readlines()
+        return "<br><br>".join(output)
+
+@app.route('/admin/logs')
+@login_required
+#@admin_required
+def log_menu():
+    return render_template('admin/logs.html', title = 'Logs')

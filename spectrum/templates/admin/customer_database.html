@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+<table class="table tbale-sm">
+    <legend class='text-center'> Customer database </legend>
+    <thead>
+        <th>ID</th>
+        <th>Image</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td> <img src="{{url_for('static',filename='profile_pics/' + user.image_file)}}" alt="{{user.username}}" width="50" height="50"></td>
+        <td>{{ user.first_name  }}</td>
+        <td>{{ user.last_name  }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
