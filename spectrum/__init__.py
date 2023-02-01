@@ -7,6 +7,7 @@ from flask_msearch import Search
 from flask_mail import Mail
 import os
 from datetime import timedelta
+import spectrum.rsa as rsa
 from flask_session import Session
 
 app = Flask(__name__)
@@ -33,6 +34,18 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'Spectrum_Support@gmail.com'
 app.config['MAIL_PASSWORD'] = 'Spectrum1234'
 mail = Mail(app)
+
+# keysize = 2048
+# private_keyfile = "a_private.pem"
+# public_keyfile = "a_public.pem"
+
+
+# # generate keypair
+# keypair = rsa.generate_keypair(keysize)
+
+# # store keypair in files
+# rsa.write_private_key(keypair, private_keyfile)
+# rsa.write_public_key(keypair, public_keyfile)
 
 app.app_context().push()
 

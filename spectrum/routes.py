@@ -12,8 +12,8 @@ import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
 from flask_mail import Message
-from spectrum.forms import LoginForm, RegistrationForm, RequestResetForm, ResetPasswordForm, UpdateUserAccountForm, AddproductForm, UpdateProductForm, AdminRegisterForm, AddToCartForm, AddReviewForm, CheckOutForm, VerifyCheckOutForm
-from spectrum.database import Staff, Users, User, Addproducts, Category, Items_In_Cart, Review, Customer_Payments, Product_Bought
+from spectrum.forms import LoginForm, RegistrationForm, RequestResetForm, ResetPasswordForm, UpdateUserAccountForm, AddproductForm, UpdateProductForm, AdminRegisterForm, AddToCartForm, AddReviewForm, CheckOutForm, VerifyCheckOutForm, Feedback
+from spectrum.database import Staff, Users, User, Addproducts, Category, Items_In_Cart, Review, Customer_Payments, Product_Bought, Feedbackform
 import spectrum.MyCaesarcipher as cipher
 import spectrum.rsa as rsa
 import spectrum.salting as salt
@@ -446,7 +446,65 @@ def product_details(id):
         return redirect(url_for('shop'))
     return render_template('product_details.html', title="Product Details", products=products, product_reviews=product_reviews ,form=form, product_bought=product_bought)
 
+@app.route('/feedback', methods=['GET','POST'])
+def Userfeedbackform():
+    form = Feedback()
+    # keysize = 2048
+    # private_keyfile = "a_private.pem"
+    # public_keyfile = "a_public.pem"
+    
+    # keypair = rsa.generate_keypair(keysize)
+    
+    # rsa.write_private_key(keypair, private_keyfile)
+    # rsa.write_public_key(keypair, public_keyfile)
+    
+    # private_key = rsa.read_private_key(private_keyfile)
+    # public_key = rsa.read_public_key(public_keyfile)
+    # keysize = 2048
+    private_keyfile = "a_private.pem"
+    public_keyfile = "a_public.pem"
 
+
+    # generate keypair
+    # keypair = rsa.generate_keypair(keysize)
+
+    # # store keypair in files
+    # rsa.write_private_key(keypair, private_keyfile)
+    # rsa.write_public_key(keypair, public_keyfile)
+
+    # read keypair from files
+    private_key = rsa.read_private_key(private_keyfile)
+    public_key = rsa.read_public_key(public_keyfile)
+
+    if form.validate_on_submit():
+        full_name = form.full_name.data
+        email_data = form.email.data
+        phone_data = form.phone_number.data
+        message_data = form.message.data
+        email = rsa.encrypt(public_key, email_data.encode("utf8"))
+        phone_number = rsa.encrypt(public_key, phone_data.encode("utf8"))
+        message = rsa.encrypt(public_key, message_data.encode("utf8"))
+        feedback = Feedbackform(full_name=full_name,email=email,phone_number=phone_number,message=message)
+        db.session.add(feedback)
+        db.session.commit()
+        flash(f'Your feedback has been submitted!','success')
+        return redirect(url_for('feedback_received'))
+
+    # if form.validate_on_submit():
+    #     full_name = form.full_name.data
+    #     email = rsa.encrypt(public_key, form.email.data.encode('utf-8'))
+    #     phone_number = rsa.encrypt(public_key,form.phone_number.data.encode('utf-8'))
+    #     message = rsa.encrypt(public_key,form.message.data.encode('utf-8'))
+    #     feedback = Feedbackform(full_name=full_name,email=email,phone_number=phone_number,message=message)
+    #     db.session.add(feedback)
+    #     db.session.commit()
+    #     flash(f'Your feedback has been submitted!','success')
+    #     return redirect(url_for('feedback_received'))
+    return render_template('feedback.html',form=form)
+
+@app.route('/feedbackreceived')
+def feedback_received():
+    return render_template('feedbackreceived.html',title = 'We hear you!')
 
 #---------------------ADMIN-PAGE------------------------#
 
@@ -634,3 +692,37 @@ def sales():
     return render_template('admin/sales.html',title='Sales Report', total_count=total_count, total_profit=total_profit, current_day_products=current_day_products)
     # return render_template('admin/sales.html',title='Sales Report' ,plot=line_graph, total_count=total_count, total_profit=total_profit, current_day_products=current_day_products)
 
+@app.route('/admin/display_feedback')
+#@login_required
+#@admin_required
+def feedback():
+    # keysize = 2048
+    private_keyfile = "a_private.pem"
+    public_keyfile = "a_public.pem"
+    
+    # keypair = rsa.generate_keypair(keysize)
+    
+    # rsa.write_private_key(keypair, private_keyfile)
+    # rsa.write_public_key(keypair, public_keyfile)
+    
+    # private_key = rsa.read_private_key(private_keyfile)
+    # public_key = rsa.read_public_key(public_keyfile)
+
+    # read keypair from files
+    private_key = rsa.read_private_key(private_keyfile)
+    public_key = rsa.read_public_key(public_keyfile)
+
+
+
+    feedbacks = Feedbackform.query.all()
+    feedback_list = []
+    for feedback in feedbacks:
+        email_data = feedback.email
+        phone_data = feedback.phone_number
+        message_data = feedback.message
+        feedback.email = rsa.decrypt(private_key, email_data).decode("utf8")
+        feedback.phone_number = rsa.decrypt(private_key, phone_data).decode("utf8")
+        message = rsa.decrypt(private_key, message_data).decode("utf8")
+        feedback.message = message
+        feedback_list.append(feedback)
+    return render_template('admin/display_feedback.html', title='Feedbacks', feedbacks=feedback_list)

@@ -163,3 +163,9 @@ class Customer_Payments(db.Model):
     def verify_totp(self, token):
         return onetimepass.valid_totp(token, self.otp_secret)
 
+class Feedbackform(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    full_name = db.Column(db.String(80), nullable = False)
+    email = db.Column(db.String(100), nullable=False)
+    phone_number = db.Column(db.Integer, nullable=False)
+    message = db.Column(db.String(100), nullable=False)

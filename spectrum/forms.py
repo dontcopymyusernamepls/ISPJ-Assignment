@@ -149,3 +149,9 @@ class VerifyCheckOutForm(FlaskForm):
     Otp_number = StringField('OTP Number', validators=[DataRequired()], render_kw={"PlaceHolder": "••••"})
     submit = SubmitField('Verify')
 
+class Feedback(FlaskForm):
+    full_name = StringField('Full name', validators=[DataRequired(),Length(min=3, max=26)], render_kw={"PlaceHolder": "Amy Tan"})
+    email = StringField('Email', validators=[DataRequired(), Email()], render_kw={"PlaceHolder": "AmyTan@gmail.com"})
+    phone_number = StringField('Phone Number', validators=[DataRequired(),Length(min=8, max=11)], render_kw={"PlaceHolder": "+65 12345678"})
+    message = StringField('Message', validators=[DataRequired()])
+    submit = SubmitField('Submit')
