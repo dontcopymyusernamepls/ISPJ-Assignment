@@ -29,6 +29,13 @@
                 <h5>
                   <span>$</span> {{ product.price }}
                 </h5>
+                <form method="post" action="/addtocart">
+                  <input class="d-none" type="text" name="product_id" value="{{ product.id }}" />
+                  <input class="d-none" type="text" name="quantity" value="1" />
+                  <button class="">
+                    Add to Cart
+                  </button>
+                </form>
               </div>
               <div class="like">
                 <h6>

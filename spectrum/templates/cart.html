@@ -24,12 +24,12 @@
                 {% set subtotal = product.quantity|int * product.price|float %}
                 <td>{{subtotal}}</td>
                 <td><a href="#">Edit</a></td>
-                <td> <a href="#"">Delete</a></td>
+                <td> <a href="/deleteitem/{{key}}">Delete</a></td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
     <h3>Total: ${{total}}</h3>
-    <button type="submit" class="btn btn-secondary" data-toggle="button">Checkout</button>
+    <button type="submit" class="btn btn-secondary" data-toggle="button" onclick="location.href = '/checkout'">Checkout</button>
 </div>
 {% endblock content %}

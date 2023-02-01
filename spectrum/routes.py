@@ -294,32 +294,37 @@ def save_picture(form_pic, current_picture):
 @app.route('/addtocart', methods=['POST'])
 def AddtoCart():
     try:
-        products_id = request.form.get('products_id')
+        products_id = request.form.get('product_id')
         quantity = int(request.form.get('quantity'))
+
         product = Addproducts.query.filter_by(id=products_id).all()[0]
 
-        if request.method =="POST":
+        if request.method == "POST":
             DictItems = {products_id:{'name':product.name, 'image':product.image_1, 'price':product.price, 'quantity':quantity}}
 
-            if 'shoppingcart' in session:
+            if 'shoppingcart' in session and session['shoppingcart'] is not None:
+
                 print(session['shoppingcart'])
                 if products_id in session['shoppingcart']:
                     for key, item in session['shoppingcart'].items():
                         if int(key) == int(products_id):
                             session.modified = True
-                            item['quantity'] += 1
+                            item['quantity'] += quantity
                     
                 else:
-                    # session['shoppingcart'] = MagerDicts(session['shoppingcart'], DictItems)
+                    session['shoppingcart'] = session['shoppingcart'] | DictItems
+                    flash(f"Added {quantity} {product.name} to cart!")
                     return redirect(request.referrer)
 
             else:
                 session['shoppingcart'] = DictItems
+                flash(f"Added {quantity} {product.name} to cart!")
                 return redirect(request.referrer)
 
     except Exception as e:
         print(e)
     finally:
+        flash(f"Added {quantity} {product.name} to cart!")
         return redirect(request.referrer)
 
 
@@ -343,19 +348,19 @@ def cart():
         items += 1
     return render_template('cart.html', title='Shopping Cart', current_user=current_user, cart_items=cart_items, items=items, total=total)
 
-# @app.route('/deleteitem/<int:id>')
-# def deleteitem(id):
-#     if 'shoppingcart' not in session:
-#         return redirect(url_for('home'))
-#     try:
-#         session.modified = True
-#         for key , item in session['shoppingcart'].items():
-#             if int(key) == id:
-#                 session['shoppingcart'].pop(key, None)
-#                 return redirect(url_for('cart'))
-#     except Exception as e:
-#         print(e)
-#         return redirect(url_for('cart'))
+@app.route('/deleteitem/<int:id>')
+def deleteitem(id):
+    if 'shoppingcart' not in session:
+        return redirect(url_for('home'))
+    try:
+        session.modified = True
+        for key , item in session['shoppingcart'].items():
+            if int(key) == id:
+                session['shoppingcart'].pop(key, None)
+                return redirect(request.referrer)
+    except Exception as e:
+        print(e)
+        return redirect(request.referrer)
 
 
 
@@ -364,27 +369,24 @@ def cart():
 @login_required
 def checkout_details():
     form = CheckOutForm()
-    cart_items = Items_In_Cart.query.filter_by(user_id=current_user.id).all()
+    cart_items = session["shoppingcart"] # Items_In_Cart.query.filter_by(user_id=current_user.id).all()
     subtotal = 0
     total = 0
-    for item in cart_items:
-        product = Addproducts.query.filter_by(id=item.product_id).first()
-        if product.stock < item.quantity:
+    print(cart_items)
+    for key, item in cart_items.items():
+        print(item)
+        product = Addproducts.query.filter_by(id=key).first()
+        if product.stock < item['quantity']:
             flash('{{product.name}} only has {{product.stock}} left in stock', 'danger')
             return redirect(url_for('cart'))
         else:
-            subtotal += item.price
+            subtotal += item['price']
     
     total = subtotal + 10
 
     keysize = 2048
     private_keyfile = "a_private.pem"
     public_keyfile = "a_public.pem"
-    
-    keypair = rsa.generate_keypair(keysize)
-    
-    rsa.write_private_key(keypair, private_keyfile)
-    rsa.write_public_key(keypair, public_keyfile)
     
     private_key = rsa.read_private_key(private_keyfile)
     public_key = rsa.read_public_key(public_keyfile)
@@ -398,12 +400,14 @@ def checkout_details():
         checkout_details = Customer_Payments(full_name=full_name, address=en_address, postal_code=postal_code, card_number=en_card_number, cvv=en_cvv)
         db.session.add(checkout_details)
         
-        for cart_item in cart_items:
-            product = Addproducts.query.filter_by(id=cart_item.product_id).first()
-            product.stock = product.stock - cart_item.quantity
-            product_bought = Product_Bought(quantity=cart_item.quantity, product_id=cart_item.product_id, user_id=cart_item.user_id, product_name=cart_item.name, image=cart_item.image_1, price=cart_item.price)
+        print(cart_items)
+        for key, cart_item in cart_items.items():
+            product = Addproducts.query.filter_by(id=key).first()
+            product.stock = product.stock - cart_item["quantity"]
+            product_bought = Product_Bought(quantity=cart_item["quantity"], product_id=key, user_id=current_user.id, product_name=cart_item["name"], image=cart_item["image"], price=cart_item["price"])
             db.session.add(product_bought)
-            db.session.delete(cart_item)
+            # db.session.delete(cart_item)
+            session["shoppingcart"] = dict()
             db.session.commit()
         flash(f'Your order has been submitted!','success')
         return redirect(url_for('thanks')) #verify

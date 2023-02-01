@@ -72,14 +72,14 @@
                      <h4 class="widget-title">Order Summary</h4>
                      <hr>
                      <div class="media product-card">
-                        {% for product in cart_items %}
+                        {% for key, product in cart_items.items() %}
                         <a class="pull-left" href="">
-                            <img src="{{url_for('static',filename='product_pics/' + product.image_1)}}" alt="{{product.name}}" width="50" height="50">
+                            <img src="{{url_for('static',filename='images/' + product.image)}}" alt="{{product.name}}" width="50" height="50">
                         </a>
                         <div class="media-body">
                            <h4 class="media-heading">{{ product.name }}</h4>
                            <p class="price">{{ product.quantity }} x ${{ product.price }}</p>
-                           <span class="remove"><a href="{{ url_for('delete_cart_item_checkout', id=product.id)}}">Remove</a></span>
+                           <span class="remove"><a href="/deleteitem/{{key}}">Remove</a></span>
                            <hr>
                         </div>
                         {% endfor %}

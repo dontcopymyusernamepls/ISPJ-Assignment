@@ -98,7 +98,7 @@
                         <a href="{{url_for('cart')}}" class="cart_link">
                           <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                           <span class="cart_number">
-                            0
+                            {{session['shoppingcart']|length if ('shoppingcart' in session and session['shoppingcart'] is not none) else 0}}
                           </span>
                         </a>
                         <form class="form-inline " method="GET" action='/search'>
