@@ -16,3 +16,16 @@
  INFO users: 127.0.0.1 - - [02/Feb/2023 01:53:31] REQUEST[GET] CQY@ADMIN.COM logged out.
  INFO users: 127.0.0.1 - - [02/Feb/2023 01:54:29] REQUEST[POST] Loli@dc.com logged in successfully.
  INFO users: 172.20.0.2 - - [01/Feb/2023 22:08:30] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.18.0.3 - - [01/Feb/2023 22:32:57] REQUEST[POST] novohlue@gmail.com has created an account.
+ INFO users: 172.18.0.3 - - [01/Feb/2023 22:33:23] REQUEST[POST] novohlue@gmail.com logged in successfully.
+ INFO users: 172.18.0.3 - - [02/Feb/2023 01:22:23] REQUEST[POST] joycelim@gmail.com has created an account.
+ INFO users: 172.18.0.3 - - [02/Feb/2023 01:22:53] REQUEST[POST] joycelim@gmail.com logged in successfully.
+ INFO users: 172.18.0.3 - - [02/Feb/2023 02:14:33] REQUEST[POST] joycelim@gmail.com logged in successfully.
+ INFO users: 172.18.0.3 - - [02/Feb/2023 02:17:22] REQUEST[POST] joycelim@gmail.com logged in successfully.
+ INFO users: 172.18.0.2 - - [02/Feb/2023 04:36:31] REQUEST[POST] joycetesting@gmail.com has created an account.
+ INFO users: 172.18.0.2 - - [02/Feb/2023 04:37:27] REQUEST[POST] joycetesting@gmail.com logged in successfully.
+ INFO users: 172.18.0.2 - - [02/Feb/2023 04:40:51] REQUEST[GET] joycetesting@gmail.com logged out.
+ INFO users: 172.18.0.2 - - [02/Feb/2023 04:41:12] REQUEST[POST] joycelim2003@gmail.com logged in successfully.
+ INFO users: 172.18.0.3 - - [02/Feb/2023 05:04:53] REQUEST[POST] joycelim2003@gmail.com encountered unsuccessful login.
+ INFO users: 172.18.0.3 - - [02/Feb/2023 05:05:12] REQUEST[POST] joycelim2003@gmail.com logged in successfully.
+ INFO users: 172.18.0.2 - - [02/Feb/2023 05:32:05] REQUEST[POST] joycelim2003@gmail.com logged in successfully.

@@ -335,7 +335,7 @@ def AddtoCart():
     except Exception as e:
         print(e)
     finally:
-        flash(f"Added {quantity} {product.name} to cart!")
+        flash(f"Added {quantity} to cart!")
         return redirect(request.referrer)
 
 

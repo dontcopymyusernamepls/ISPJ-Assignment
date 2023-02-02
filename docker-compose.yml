@@ -14,7 +14,6 @@ services:
     - ./a_private.pem:/app/a_private.pem
     - ./a_public.pem:/app/a_public.pem
     - ./requirements.txt:/app/requirement.txt
-    - ./flask_session:/app/flask_session
     - ./logs:/app/logs
     - ./instance:/app/instance
     - ./run.py:/app/run.py

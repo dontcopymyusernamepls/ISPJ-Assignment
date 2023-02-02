@@ -57,3 +57,7 @@
  INFO admin: 127.0.0.1 - - [02/Feb/2023 02:26:22] REQUEST[GET] Loli@dc.com accessed the customer database.
  INFO admin: 127.0.0.1 - - [02/Feb/2023 02:26:23] REQUEST[GET] Loli@dc.com accessed the customer database.
  INFO admin: 127.0.0.1 - - [02/Feb/2023 02:26:27] REQUEST[GET] Loli@dc.com accessed the customer database.
+ INFO admin: 172.18.0.2 - - [02/Feb/2023 04:40:34] REQUEST[POST] joycelim2003@gmail.com has created an account.
+ INFO admin: 172.18.0.2 - - [02/Feb/2023 04:41:14] REQUEST[GET] joycelim2003@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.2 - - [02/Feb/2023 04:41:19] REQUEST[GET] joycelim2003@gmail.com accessed the product list.
+ INFO admin: 172.18.0.2 - - [02/Feb/2023 04:41:28] REQUEST[GET] joycelim2003@gmail.com accessed the product list.

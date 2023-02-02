@@ -20,9 +20,6 @@
                         {% if products.stock == 0 %}
                         <p>Out of Stock</p>
                         {% else %}
-                        <p>
-                            <a href="" class="btn btn-primary btn-outline btn-lg">Add to Cart</a>
-                        </p>
                         {% endif %}
                     </div>
                         <span class="price">SGD{{ products.price }}</span>
@@ -31,9 +28,9 @@
                         <p>Out of Stock</p>
                         {% else %}
 
-                        <form action="{{url_for('AddtoCart')}}" method="post">
-                            <input type="hidden" name="products_id" value="{{products.id}}">
-                            <button type="button" class="btn btn-secondary" data-toggle="button">Add to Cart</button>
+                        <form action="/addtocart" method="post">
+                            <input type="hidden" name="product_id" value="{{products.id}}">
+                            <button type="submit" class="btn btn-secondary">Add to Cart</button>
                             <p></p>
                             <label for="quantity">Quantity: </label>
                             <input type="number" name="quantity" value="1" min="1" max="{{products.stock}}">
