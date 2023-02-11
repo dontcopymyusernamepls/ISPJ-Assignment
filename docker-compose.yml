@@ -22,5 +22,8 @@ services:
     container_name: firewall
     image: firewall
     ports:
-    - "8088:80"
+    - "8080:80"
+    - "8443:443"
+    volumes:
+    - ./ssl:/ssl
     restart: always
