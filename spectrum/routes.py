@@ -13,14 +13,30 @@ import pandas as pd
 import numpy as np
 from flask_mail import Message
 from spectrum.forms import LoginForm, RegistrationForm, RequestResetForm, ResetPasswordForm, UpdateUserAccountForm, AddproductForm, UpdateProductForm, AdminRegisterForm, AddToCartForm, AddReviewForm, CheckOutForm, VerifyCheckOutForm, Feedback
-from spectrum.database import Staff, Users, User, Addproducts, Category, Items_In_Cart, Review, Customer_Payments, Product_Bought, Feedbackform
+from spectrum.database import Staff, Users, User, Addproducts, Category, Items_In_Cart, Review, Customer_Payments, Product_Bought, Feedbackform, PassKeyDevice
 import spectrum.MyCaesarcipher as cipher
 import spectrum.rsa as rsa
 import spectrum.salting as salt
 from io import BytesIO
 import onetimepass
 import pyqrcode
-# import 
+
+from webauthn import (
+    generate_registration_options,
+    verify_registration_response,
+    options_to_json,
+    base64url_to_bytes,
+)
+
+from webauthn.helpers.structs import (
+    AttestationConveyancePreference,
+    AuthenticatorAttachment,
+    AuthenticatorSelectionCriteria,
+    PublicKeyCredentialDescriptor,
+    ResidentKeyRequirement,
+    RegistrationCredential,
+)
+
 
 def trunc_datetime(someDate):
     return someDate.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
@@ -49,6 +65,36 @@ def page_not_found(e):
 def internal_server_error(e):
     # note that we set the 500 status explicitly
     return render_template('error/500.html'), 500
+
+#--------------------PASSKEYS-USER-AUTHENTICATION--------------------------#
+
+@app.route('/generate_registration_options', methods=['GET'])
+def generate_registration_options_route():
+
+    devices = PassKeyDevice.query.filter_by(uid=current_user.id)
+    challenge = os.urandom(8)
+
+    options = generate_registration_options(
+        rp_id="localhost",
+        rp_name="Spectrum App",
+        user_id=str(current_user.id),
+        user_name=current_user.username,
+        attestation=AttestationConveyancePreference.NONE,
+        authenticator_selection=AuthenticatorSelectionCriteria(
+            authenticator_attachment=AuthenticatorAttachment.PLATFORM,
+            resident_key=ResidentKeyRequirement.DISCOURAGED,
+        ),
+        exclude_credentials=list(map(
+            lambda x : PublicKeyCredentialDescriptor(id=bytes(x["credentialID"])),
+            devices
+        )),
+        timeout=60000,
+        challenge=challenge
+    )
+
+    session["pk_challenge"] = challenge
+
+    return options_to_json(options)
 
 #--------------------LOGIN-LOGOUT-REGISTER-PAGE--------------------------#
 

@@ -29,3 +29,9 @@
  INFO users: 172.18.0.3 - - [02/Feb/2023 05:04:53] REQUEST[POST] joycelim2003@gmail.com encountered unsuccessful login.
  INFO users: 172.18.0.3 - - [02/Feb/2023 05:05:12] REQUEST[POST] joycelim2003@gmail.com logged in successfully.
  INFO users: 172.18.0.2 - - [02/Feb/2023 05:32:05] REQUEST[POST] joycelim2003@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:06:18] REQUEST[POST] carlvoller8@gmail.com has created an account.
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:07:10] REQUEST[POST] carlvoller8@gmail.com encountered unsuccessful login.
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:07:46] REQUEST[POST] carlvoller8@gmail.com encountered unsuccessful login.
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:08:45] REQUEST[POST] carlvoller8@gmail.com has created an account.
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:09:11] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:28:19] REQUEST[POST] carlvoller8@gmail.com has created an account.

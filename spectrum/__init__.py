@@ -35,7 +35,7 @@ migrate = Migrate(app, db)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 search = Search()
-search.init_app(app)
+search.init_app(app) 
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
 app.config['MAIL_SERVER'] = 'smtp-mail.outlook.com'
@@ -57,9 +57,9 @@ mail = Mail(app)
 # rsa.write_private_key(keypair, private_keyfile)
 # rsa.write_public_key(keypair, public_keyfile)
 
+from spectrum import routes
+
 app.app_context().push()
 
 with app.app_context():
     db.create_all()
-
-from spectrum import routes

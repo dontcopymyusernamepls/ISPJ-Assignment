@@ -48,4 +48,5 @@ typing_extensions==4.4.0
 urllib3==1.26.14
 Werkzeug==2.2.2
 WTForms==3.0.1
+webauthn==1.7.0
 zipp==3.12.0

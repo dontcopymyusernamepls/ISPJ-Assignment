@@ -6295,3 +6295,621 @@ FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/df4e
  INFO werkzeug: 172.20.0.3 - - [11/Feb/2023 18:53:34] "[33mGET /images/slider-bg.png HTTP/1.0[0m" 404 -
  INFO werkzeug: 172.20.0.3 - - [11/Feb/2023 18:53:34] "[33mGET /images/contact_bg.jpg HTTP/1.0[0m" 404 -
  INFO werkzeug: 172.20.0.3 - - [11/Feb/2023 18:53:35] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+ INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+ INFO werkzeug: [33mPress CTRL+C to quit[0m
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 230-175-408
+ INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+ INFO werkzeug: [33mPress CTRL+C to quit[0m
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 765-710-365
+ INFO werkzeug:  * Detected change in '/app/spectrum/database.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 765-710-365
+ INFO werkzeug:  * Detected change in '/app/spectrum/database.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.0.3:5000
+ INFO werkzeug: [33mPress CTRL+C to quit[0m
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 765-710-365
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 765-710-365
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 765-710-365
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET / HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/owl.carousel.min.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/bootstrap.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/bootstrap.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/responsive.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/style.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/jquery-3.4.1.min.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/cutom.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET / HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/images/slider-img.jpg HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/images/slider-img2.jpg HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/images/slider-img3.jpg HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/images/about-img.jpg HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/images/5ce321ca32d7a79b802b.jpg HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "[33mGET /images/client.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:02] "GET /static/images/client.jpg HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:03] "[33mGET /images/slider-bg.png HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:03] "[33mGET /images/contact_bg.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:03] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:04] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "POST /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:18:34] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:22] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:23] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:19:31] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:48:41] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 765-710-365
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:50:57] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:18] "[35m[1mPOST /login HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:18] "GET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:18] "GET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:18] "GET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:18] "[36mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/database.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 765-710-365
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:51:57] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:52:08] "[35m[1mPOST /register HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:52:08] "GET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:52:08] "GET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:52:08] "GET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0" 200 -
+ INFO werkzeug: 172.20.0.2 - - [12/Feb/2023 18:52:08] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.2:5000
+ INFO werkzeug: [33mPress CTRL+C to quit[0m
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:04] "[35m[1mPOST /register HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:04] "[36mGET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:04] "[36mGET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:04] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:04] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:11] "[35m[1mPOST /register HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:11] "[36mGET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:11] "[36mGET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:11] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:11] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:24] "[35m[1mPOST /register HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:24] "[36mGET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:24] "[36mGET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:25] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:54:25] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:00] "[35m[1mGET /home HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:00] "GET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:00] "GET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:01] "GET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:01] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:03] "[35m[1mGET /home HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:03] "[36mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:03] "[36mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:03] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:03] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:04] "[35m[1mGET / HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:04] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:04] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:04] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:55:04] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:05] "[35m[1mGET / HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:05] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:05] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:05] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:05] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:06] "[35m[1mGET / HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:06] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:06] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:07] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:07] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/__init__.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:18] "[35m[1mGET / HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:18] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:18] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:18] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:18] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:20] "[35m[1mGET / HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:20] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:20] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:56:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[32mGET /admin/display_product HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:58:59] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:02] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:14] "[35m[1mPOST /register HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:14] "[36mGET /register?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:14] "[36mGET /register?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:14] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 18:59:14] "[36mGET /register?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.2:5000
+ INFO werkzeug: [33mPress CTRL+C to quit[0m
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:00:05] "[35m[1mGET /home HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:00:05] "[36mGET /home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:00:05] "[36mGET /home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:00:05] "[36mGET /home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/__init__.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/images/slider-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/images/slider-img2.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/images/about-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/images/slider-img3.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[33mGET /images/client.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[36mGET /static/images/client.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[33mGET /images/contact_bg.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:05:56] "[33mGET /images/slider-bg.png HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:09] "GET /register HTTP/1.0" 200 -
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:06:18] REQUEST[POST] carlvoller8@gmail.com has created an account.
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[32mPOST /register HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "GET /twofactor HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "GET /twofactor HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:18] "GET /qrcode HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:06:57] "GET /login HTTP/1.0" 200 -
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:07:10] REQUEST[POST] carlvoller8@gmail.com encountered unsuccessful login.
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[32mPOST /login HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:10] "GET /login HTTP/1.0" 200 -
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:07:46] REQUEST[POST] carlvoller8@gmail.com encountered unsuccessful login.
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[32mPOST /login HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:07:46] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/__init__.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:26] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:28] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "POST /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:37] "GET /register HTTP/1.0" 200 -
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:08:45] REQUEST[POST] carlvoller8@gmail.com has created an account.
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[32mPOST /register HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "GET /twofactor HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "GET /twofactor HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:08:45] "GET /qrcode HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "GET /login HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:00] "GET /login HTTP/1.0" 200 -
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:09:11] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[32mPOST /login HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/images/slider-img2.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/images/slider-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/images/slider-img3.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/images/about-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[36mGET /static/images/client.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[33mGET /images/slider-bg.png HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[33mGET /images/client.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:11] "[33mGET /images/contact_bg.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:09:20] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug:  * Detected change in '/app/spectrum/database.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:27:17] "[35m[1mGET /generate_registration_options HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:27:17] "GET /generate_registration_options?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:27:17] "GET /generate_registration_options?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:27:18] "GET /generate_registration_options?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:27:18] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/database.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug:  * Detected change in '/app/spectrum/database.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "GET /register HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:09] "GET /register HTTP/1.0" 200 -
+ INFO users: 172.19.0.3 - - [12/Feb/2023 19:28:19] REQUEST[POST] carlvoller8@gmail.com has created an account.
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[32mPOST /register HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "GET /twofactor HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "GET /twofactor HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:19] "GET /qrcode HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[32mGET /login HTTP/1.0[0m" 302 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/images/slider-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/images/slider-img2.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/images/client.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/images/slider-img3.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[36mGET /static/images/about-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[33mGET /images/slider-bg.png HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[33mGET /images/client.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:33] "[33mGET /images/contact_bg.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:36] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:43] "[35m[1mGET /generate_registration_options HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:43] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:43] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:28:43] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:04] "[35m[1mGET /generate_registration_options HTTP/1.0[0m" 500 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:04] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:04] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:04] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:04] "[36mGET /generate_registration_options?__debugger__=yes&cmd=resource&f=console.png HTTP/1.0[0m" 304 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:29] "GET /generate_registration_options HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:29:46] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "[33mGET /static/bootstrap.js.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "GET /static/style.css.map HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:13] "[33mGET /static/bootstrap.css.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[33mGET /static/bootstrap.css.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "GET /static/style.css.map HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:30:27] "[33mGET /static/bootstrap.js.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "GET /static/style.css.map HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[33mGET /static/bootstrap.css.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:55] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:56] "[33mGET /static/bootstrap.js.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:31:57] "GET /generate_registration_options HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "GET /static/style.css.map HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[33mGET /static/bootstrap.css.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:44] "[33mGET /static/bootstrap.js.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:32:45] "GET /generate_registration_options HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[33mGET /static/bootstrap.css.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "GET /static/style.css.map HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:41] "[33mGET /static/bootstrap.js.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:42] "GET /generate_registration_options HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/owl.carousel.min.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/bootstrap.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/style.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/bootstrap.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/responsive.css HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/cutom.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/jquery-3.4.1.min.js HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "[33mGET /static/bootstrap.css.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /static/style.css.map HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "GET /account HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "[33mGET /static/bootstrap.js.map HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:57] "[33mGET /static/images/defaultpfp.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:33:58] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:34:00] "GET /generate_registration_options HTTP/1.0" 200 -
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:35:13] "GET /generate_registration_options HTTP/1.0" 200 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:36:52] "[35m[1mGET /generate_registration_options HTTP/1.0[0m" 500 -
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 447-810-105
+ INFO werkzeug: 172.19.0.3 - - [12/Feb/2023 19:37:12] "GET /generate_registration_options HTTP/1.0" 200 -

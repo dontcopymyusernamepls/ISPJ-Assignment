@@ -102,6 +102,32 @@
                 {{ form.submit(class='btn btn-secondary') }}
             </div>
         </form>
+        <div class="form-group mb-3">
+            <input class="btn btn-secondary" onclick="gen_reg_opts()" name="passkey" type="button" value="Add PassKey to Account">
+            <script>
+                function base64DecodeURL(b64urlstring) {
+                    return new Uint8Array(atob(b64urlstring.replace(/-/g, '+').replace(/_/g, '/')).split('').map(val => {
+                        return val.charCodeAt(0);
+                    }));
+                }
+                async function gen_reg_opts() {
+                    const data = await (await fetch("/generate_registration_options")).json()
+                    data.challenge = base64DecodeURL(data.challenge);
+                    data.user.id = Uint8Array.from(data.user.id, (c) => c.charCodeAt(0));
+                    data.excludeCredentials = data.excludeCredentials.map((cred) => {
+                        return {
+                            ...cred,
+                            id: base64DecodeURL(cred.id)
+                        }
+                    })
+                    const credential = await navigator.credentials.create({
+                        publicKey: data
+                    });
+
+                    console.log(credential)
+                }
+            </script>
+        </div>
     </div>
 
 </div>
