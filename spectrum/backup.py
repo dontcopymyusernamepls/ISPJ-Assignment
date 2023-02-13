@@ -5,9 +5,9 @@ def progress(status, remaining, total):
 
 try:
     # existing DB
-    sqliteCon = sqlite3.connect('spectrum/database.db')
+    sqliteCon = sqlite3.connect('instance/database.db')
     # copy into this DB
-    backupCon = sqlite3.connect('spectrum/backup.db')
+    backupCon = sqlite3.connect('instance/backup.db')
     with backupCon:
         sqliteCon.backup(backupCon, pages=3, progress=progress)
     print("backup successful")

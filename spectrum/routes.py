@@ -7,7 +7,7 @@ from sqlalchemy import extract
 from functools import wraps
 from datetime import datetime, date
 from dateutil.relativedelta import *
-import plotly, json
+import plotly, json, random
 import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
@@ -33,6 +33,7 @@ def admin_required(f):
         else:
             abort(401)
     return wrap
+
 
 #--------------------CUSTOM-ERROR-PAGE-------------------------#
 
@@ -556,7 +557,7 @@ def admin_register():
 
 @app.route('/admin/dashboard')
 @login_required
-#admin_required
+@admin_required
 def dashboard():
     dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
     admin_logger.info('%s - - [%s] REQUEST[%s] %s accessed the dashboard.', request.remote_addr, dt, request.method, current_user.email)
@@ -577,7 +578,7 @@ def save_product_picture(form_pic):
 
 @app.route('/admin/add_product', methods=['POST', 'GET'])
 @login_required 
-#@admin_required
+@admin_required
 def add_product():
     form = AddproductForm()
     categories = Category.query.all()
@@ -608,7 +609,7 @@ def add_product():
 
 @app.route('/admin/display_product')
 @login_required
-#@admin_required
+@admin_required
 def display_product():
     dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
     admin_logger.info('%s - - [%s] REQUEST[%s] %s accessed the product list.', request.remote_addr, dt, request.method, current_user.email)
@@ -618,7 +619,7 @@ def display_product():
 
 @app.route('/updateproduct/<int:id>', methods=['GET','POST'])
 @login_required
-#@admin_required
+@admin_required
 def update_product(id):
     form = UpdateProductForm()
     product = Addproducts.query.get_or_404(id)
@@ -706,7 +707,7 @@ def delete_product(id):
 
 @app.route('/admin/customer_database')
 @login_required
-#@admin_required
+@admin_required
 def customer_database():
     customers = User.query.filter_by(role='user').all()
     customer_list = []
@@ -717,6 +718,8 @@ def customer_database():
         username = customer.username
         customer.first_name = first_name.replace(first_name[1:4], "***", 1)
         customer.last_name = last_name.replace(last_name[1:4], "***", 1)
+        at = email.rfind('@')
+        number = (at-1)-1 
         customer.email = email.replace(email[1:4], "***", 1)
         customer.username = username.replace(username[1:4], "***", 1)
         customer_list.append(customer)
@@ -725,6 +728,32 @@ def customer_database():
     admin_logger.info('%s - - [%s] REQUEST[%s] %s accessed the customer database.', request.remote_addr, dt, request.method, current_user.email)
 
     return render_template('admin/customer_database.html', users=customer_list, title='Customer Database')
+
+
+@app.route('/admin/admin_database')
+@login_required
+@admin_required
+def admin_database():
+    customers = User.query.filter_by(role='admin').all()
+    customer_list = []
+    for customer in customers:
+        first_name = customer.first_name
+        last_name = customer.last_name
+        email = customer.email
+        username = customer.username
+        customer.first_name = first_name.replace(first_name[2:], "*", 1)
+        customer.last_name = last_name.replace(last_name[2:], "*", 1)
+        at = email.rfind('@')
+        number = (at-1)-1 
+        customer.email = email.replace(email[1:at-1],'*'*number, 1)
+        customer.username = username.replace(username[2:], "*", 1)
+        customer_list.append(customer)
+        
+    dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+    admin_logger.info('%s - - [%s] REQUEST[%s] %s accessed the customer database.', request.remote_addr, dt, request.method, current_user.email)
+
+    return render_template('admin/admin_database.html', users=customer_list, title='Customer Database')
+
 
 @app.route('/admin/sales')
 @login_required
@@ -779,6 +808,93 @@ def feedback():
         feedback_list.append(feedback)
     return render_template('admin/display_feedback.html', title='Feedbacks', feedbacks=feedback_list)
 
+
+@app.route('/show-monitor/admin-logs')
+# @login_required
+# @admin_required
+def admin_logs_monitor():
+
+    monitoring_list =[]
+    with open('logs/admin.log') as f:
+        lines = [line.rstrip('\n') for line in f]
+        print("hi" + str(lines))
+        for line in lines:
+            if 'INFO' not in str(line):
+                monitoring_list.append(line)
+        if len(monitoring_list) < 2:
+            monitoring_list.append('No Events require attention.') 
+    return render_template('admin/monitoring.html', title = 'Admin Logs', monitor_list=monitoring_list)
+
+
+@app.route('/show-monitor/error-logs')
+# # @login_required
+# # @admin_required
+def error_logs_monitor():
+    monitoring_list =[]
+    with open('logs/error.log') as f:
+        lines = [line.rstrip('\n') for line in f]
+        print("hi" + str(lines))
+        for line in lines:
+            if 'INFO' not in str(line):
+                monitoring_list.append(line)
+        if len(monitoring_list) < 2:
+            monitoring_list.append('No Events require attention.') 
+    return render_template('admin/monitoring.html', title = 'Error Logs', monitor_list=monitoring_list)
+
+
+@app.route('/show-monitor/product-logs')
+# # @login_required
+# # @admin_required
+def product_logs_monitor():
+    monitoring_list =[]
+    with open('logs/error.log') as f:
+        lines = [line.rstrip('\n') for line in f]
+        print("hi" + str(lines))
+        for line in lines:
+            if 'INFO' not in str(line):
+                monitoring_list.append(line)
+        if len(monitoring_list) < 2:
+            monitoring_list.append('No Events require attention.') 
+    return render_template('admin/monitoring.html', title = 'Product Logs', monitor_list=monitoring_list)
+
+
+@app.route('/show-monitor/root-logs')
+# # @login_required
+# # @admin_required
+def root_logs_monitor():
+    monitoring_list =[]
+    with open('logs/root.log') as f:
+        lines = [line.rstrip('\n') for line in f]
+        print("hi" + str(lines))
+        for line in lines:
+            if 'INFO' not in str(line):
+                monitoring_list.append(line)
+        if len(monitoring_list) < 2:
+            monitoring_list.append('No Events require attention.') 
+    return render_template('admin/monitoring.html', title = 'Root Logs', monitor_list=monitoring_list)
+
+
+@app.route('/show-monitor/users-logs')
+# # @login_required
+# # @admin_required
+def users_logs_monitor():
+    monitoring_list =[]
+    with open('logs/users.log') as f:
+        lines = [line.rstrip('\n') for line in f]
+        print("hi" + str(lines))
+        for line in lines:
+            if 'INFO' not in str(line):
+                monitoring_list.append(line)
+        if len(monitoring_list) < 2:
+            monitoring_list.append('No Events require attention.') 
+    return render_template('admin/monitoring.html', title = 'Product Logs', monitor_list=monitoring_list)
+
+
+@app.route('/admin/monitor')
+# @login_required
+# @admin_required
+def monitor_menu():
+    return render_template('admin/monitor.html', title = 'Monitoring Logs')
 
 @app.route('/show-logs')
 @login_required

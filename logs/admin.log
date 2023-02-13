@@ -57,3 +57,67 @@
  INFO admin: 127.0.0.1 - - [02/Feb/2023 02:26:22] REQUEST[GET] Loli@dc.com accessed the customer database.
  INFO admin: 127.0.0.1 - - [02/Feb/2023 02:26:23] REQUEST[GET] Loli@dc.com accessed the customer database.
  INFO admin: 127.0.0.1 - - [02/Feb/2023 02:26:27] REQUEST[GET] Loli@dc.com accessed the customer database.
+ INFO admin: 192.168.1.146 - - [02/Feb/2023 07:52:11] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 192.168.1.146 - - [02/Feb/2023 07:52:22] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 192.168.1.146 - - [02/Feb/2023 07:52:23] REQUEST[GET] Admin@email.com accessed the customer database.
+ INFO admin: 192.168.1.146 - - [02/Feb/2023 07:52:29] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 192.168.1.146 - - [02/Feb/2023 07:53:37] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 192.168.1.146 - - [02/Feb/2023 07:53:38] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 192.168.1.146 - - [02/Feb/2023 07:53:41] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.26.176.230 - - [02/Feb/2023 09:22:27] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.26.176.230 - - [02/Feb/2023 09:23:21] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.26.176.230 - - [02/Feb/2023 09:23:23] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.26.176.230 - - [02/Feb/2023 09:24:37] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.26.176.230 - - [02/Feb/2023 09:25:31] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.26.176.230 - - [02/Feb/2023 09:25:36] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.26.176.230 - - [02/Feb/2023 09:25:46] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:46:25] REQUEST[POST] testing@example.com has created an account.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:52:02] REQUEST[POST] joyceadmin@gmail.com has created an account.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:52:40] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:53:05] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:53:23] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:53:35] REQUEST[GET] joyceadmin@gmail.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:55:06] REQUEST[POST] joyceadmin@gmail.com added testshoe to the database!
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:55:09] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 03:55:11] REQUEST[GET] joyceadmin@gmail.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:04:42] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:06:22] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:09] REQUEST[POST] joyceadmin@gmail.com added qwer to the database!
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:13] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:15] REQUEST[GET] joyceadmin@gmail.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:19] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:22] REQUEST[GET] joyceadmin@gmail.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:25] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:33] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 04:07:42] REQUEST[GET] joyceadmin@gmail.com accessed the dashboard.
+ INFO admin: 172.18.0.2 - - [02/Feb/2023 06:50:20] REQUEST[GET] testing@example.com accessed the dashboard.
+ INFO admin: 172.18.0.2 - - [02/Feb/2023 06:50:25] REQUEST[GET] testing@example.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:20:54] REQUEST[POST] Admin@email.com has created an account.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:21:49] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:22:00] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:23:14] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:23:42] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:24:51] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:24:53] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:26:05] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:26:31] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:27:14] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:27:46] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:27:50] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:28:30] REQUEST[POST] Admin@email.com added Core Runner Running Shoes to the database!
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:28:32] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:28:33] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:28:38] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [02/Feb/2023 07:28:42] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:13:37] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:13:52] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:16:27] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:41:48] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:41:57] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:42:01] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:42:05] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 02:42:31] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 04:30:53] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 04:30:56] REQUEST[GET] A***n@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 04:31:45] REQUEST[GET] A***n@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [12/Feb/2023 04:39:53] REQUEST[GET] Admin@email.com accessed the dashboard.
