@@ -10,7 +10,6 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Subtotal</th>
-            <th>Edit</th>
             <th>Delete</th>
         </thead>
         <tbody>
@@ -23,7 +22,6 @@
                 <td>{{product.quantity}}</td>
                 {% set subtotal = product.quantity|int * product.price|float %}
                 <td>{{subtotal}}</td>
-                <td><a href="#">Edit</a></td>
                 <td> <a href="/deleteitem/{{key}}">Delete</a></td>
             </tr>
         {% endfor %}

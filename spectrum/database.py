@@ -13,7 +13,11 @@ import pyqrcode
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-        
+
+class PassKeyDevice(db.Model):
+    credentialID = db.Column(db.String(256), primary_key=True)
+    credentialPublicKey = db.Column(db.String(1024))
+    uid = db.Column(db.Integer)
 
 class User(db.Model, UserMixin):
     __tablename__ = 'user'
@@ -24,7 +28,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(100), nullable=False, unique=True)
     salt = db.Column(db.String(32))
-    password_hash = db.Column(db.String(128))
+    password_hash = db.Column(db.String(128), nullable=True)
     role = db.Column(db.String(10), nullable=False, default='user')
     image_file = db.Column(db.String(20), nullable=False, default='defaultpfp.jpg')
     otp_secret = db.Column(db.String(16))
