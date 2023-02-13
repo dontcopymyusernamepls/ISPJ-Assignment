@@ -163,7 +163,6 @@ class Customer_Payments(db.Model):
     address = db.Column(db.Text, nullable = False)
     postal_code = db.Column(db.Integer, nullable = False)
     card_number = db.Column(db.Integer, nullable=False)
-    cvv = db.Column(db.Integer, nullable=False)
     def verify_totp(self, token):
         return onetimepass.valid_totp(token, self.otp_secret)
 

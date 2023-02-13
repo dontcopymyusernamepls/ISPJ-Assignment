@@ -121,3 +121,24 @@
  INFO users: 172.19.0.3 - - [12/Feb/2023 19:09:11] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
  INFO users: 172.19.0.3 - - [12/Feb/2023 19:28:19] REQUEST[POST] carlvoller8@gmail.com has created an account.
 >>>>>>> 87ac21fd16362db93ec1a29f6adcee1f2e01a7ac
+ INFO users: 172.19.0.3 - - [13/Feb/2023 17:24:38] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:13:25] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:31:19] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:32:22] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:32:27] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:32:32] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:32:55] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:33:00] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:33:27] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:33:34] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:33:44] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:33:50] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:34:31] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:34:36] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:34:42] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:34:55] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:35:41] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:35:46] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:36:01] REQUEST[GET] carlvoller8@gmail.com logged out.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:38:37] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
+ INFO users: 172.19.0.3 - - [13/Feb/2023 18:38:43] REQUEST[GET] carlvoller8@gmail.com logged out.
