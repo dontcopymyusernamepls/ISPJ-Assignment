@@ -20,6 +20,7 @@ import spectrum.salting as salt
 from io import BytesIO
 import onetimepass
 import pyqrcode
+import re
 
 from webauthn import (
     generate_registration_options,
@@ -171,7 +172,7 @@ def generate_registration_options_route():
             resident_key=ResidentKeyRequirement.DISCOURAGED,
         ),
         exclude_credentials=list(map(
-            lambda x : PublicKeyCredentialDescriptor(id=bytes(x["credentialID"])),
+            lambda x : PublicKeyCredentialDescriptor(id=bytes(x.credentialID)),
             devices
         )),
         timeout=60000,
@@ -556,6 +557,14 @@ def checkout_details():
     public_key = rsa.read_public_key(public_keyfile)
 
     if form.validate_on_submit():
+
+        credit_card_number = form.card_number.data
+        valid = re.search("^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$", credit_card_number)
+
+        if valid is None:
+            flash("Invalid Credit Card Number!")
+            return render_template('checkout.html', title='Checkout',form=form, cart_items=cart_items, subtotal=subtotal, total=total)
+
         full_name = form.full_name.data
         en_address = rsa.encrypt(public_key, form.address.data.encode('utf-8'))
         postal_code = form.postal_code.data

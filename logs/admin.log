@@ -129,3 +129,4 @@
  INFO admin: 172.18.0.2 - - [02/Feb/2023 04:41:28] REQUEST[GET] joycelim2003@gmail.com accessed the product list.
 >>>>>>> 87ac21fd16362db93ec1a29f6adcee1f2e01a7ac
  INFO admin: 172.19.0.3 - - [13/Feb/2023 17:24:48] REQUEST[GET] carlvoller8@gmail.com accessed the dashboard.
+ INFO admin: 172.19.0.3 - - [13/Feb/2023 19:43:34] REQUEST[GET] carlvoller8@gmail.com accessed the dashboard.

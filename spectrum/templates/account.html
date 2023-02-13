@@ -121,9 +121,8 @@
                                 }
 
                                 async function gen_reg_opts() {
-                                    try {
-                                        const data = await (await fetch("/generate_registration_options")).json()
-                                    } catch { return window.location.reload() }
+                                    const data = await (await fetch("/generate_registration_options")).json()
+                                    
                                     data.challenge = base64DecodeURL(data.challenge);
                                     data.user.id = Uint8Array.from(data.user.id, (c) => c.charCodeAt(0));
                                     data.excludeCredentials = data.excludeCredentials.map((cred) => {
