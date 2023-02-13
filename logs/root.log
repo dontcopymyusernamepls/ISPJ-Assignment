@@ -12041,3 +12041,95 @@ FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/cf5c
  INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:24:56] "[36mGET /static/images/d9a1fb29d0e49904001b.png HTTP/1.0[0m" 304 -
  INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
  INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 123-173-423
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ WARNING root: Exception raised while handling cache file '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 256, in set
+    self._run_safely(os.chmod, filename, self._mode)
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 324, in _run_safely
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+ WARNING root: Exception raised while handling cache file '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 256, in set
+    self._run_safely(os.chmod, filename, self._mode)
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 324, in _run_safely
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+ WARNING root: Exception raised while handling cache file '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 256, in set
+    self._run_safely(os.chmod, filename, self._mode)
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 324, in _run_safely
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:27] "[36mGET /static/images/slider-img.jpg HTTP/1.0[0m" 304 -
+ WARNING root: Exception raised while handling cache file '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 256, in set
+    self._run_safely(os.chmod, filename, self._mode)
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 324, in _run_safely
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/slider-img2.jpg HTTP/1.0[0m" 304 -
+ WARNING root: Exception raised while handling cache file '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 256, in set
+    self._run_safely(os.chmod, filename, self._mode)
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 324, in _run_safely
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/about-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/82b7211e2f2d402f5f99.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[33mGET /images/slider-bg.png HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/slider-img3.jpg HTTP/1.0[0m" 304 -
+ WARNING root: Exception raised while handling cache file '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 256, in set
+    self._run_safely(os.chmod, filename, self._mode)
+  File "/usr/local/lib/python3.11/site-packages/cachelib/file.py", line 324, in _run_safely
+    output = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/cf5cda59bf833fcb6c236416c7c8c2ee'
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/d9a1fb29d0e49904001b.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[33mGET /images/contact_bg.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/ed641b21291b3636f0e0.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/7ca4e79fe93d3cf3d4c8.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[33mGET /images/client.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:28] "[36mGET /static/images/client.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[33mGET /static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/jquery-3.4.1.min.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/bootstrap.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/cutom.js HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "GET /home HTTP/1.0" 200 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/slider-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/slider-img2.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/about-img.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/slider-img3.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/82b7211e2f2d402f5f99.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/ed641b21291b3636f0e0.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/client.jpg HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/d9a1fb29d0e49904001b.png HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[33mGET /images/client.jpg HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.2 - - [13/Feb/2023 05:26:32] "[36mGET /static/images/7ca4e79fe93d3cf3d4c8.png HTTP/1.0[0m" 304 -
