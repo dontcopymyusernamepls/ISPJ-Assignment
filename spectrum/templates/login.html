@@ -93,7 +93,7 @@
 
                   const email = document.getElementById("email").value;
                   
-                  // passkeys, send request to route
+                  // send request to route
                   const data = await (await fetch("/generate_authentication_options?email=" + email)).json().catch(() => window.location.reload())
                   data.challenge = base64DecodeURL(data.challenge);
 
