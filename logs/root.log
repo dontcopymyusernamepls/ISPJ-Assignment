@@ -26596,3 +26596,27 @@ FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/df4e
  INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:14] "[33mGET /images/client.jpg HTTP/1.0[0m" 404 -
  INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
  INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 404-595-599
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 09:45:33] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "GET /admin/dashboard HTTP/1.0" 200 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[33mGET /admin/static/bootstrap.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[33mGET /admin/static/bootstrap.js HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[33mGET /admin/static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[33mGET /admin/static/jquery-3.4.1.min.js HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:33] "[33mGET /admin/static/cutom.js HTTP/1.0[0m" 404 -
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 09:45:34] REQUEST[GET] Admin@email.com accessed the customer database.
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "GET /admin/customer_database HTTP/1.0" 200 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[36mGET /static/owl.carousel.min.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[36mGET /static/bootstrap.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[36mGET /static/style.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[33mGET /admin/static/bootstrap.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[36mGET /static/responsive.css HTTP/1.0[0m" 304 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[33mGET /admin/static/syle.css HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[33mGET /admin/static/jquery-3.4.1.min.js HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[33mGET /admin/static/bootstrap.js HTTP/1.0[0m" 404 -
+ INFO werkzeug: 172.18.0.3 - - [14/Feb/2023 09:45:34] "[33mGET /admin/static/cutom.js HTTP/1.0[0m" 404 -
