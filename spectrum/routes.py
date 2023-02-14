@@ -249,9 +249,11 @@ def reset_token(token):
         return redirect(url_for('reset_request'))
     form = ResetPasswordForm()
     if form.validate_on_submit():
-        hash_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        random_string = salt.generate_random()
+        password_salt = salt.append_random(form.password.data, random_string)
+        #hash_pw = bcrypt.generate_password_hash(password_salt).decode('utf-8')
 
-        user.password = hash_pw
+        user.password = password_salt
         db.session.commit()
         flash(f'Account has been created, you can now login.', 'success')
         return redirect(url_for('login'))

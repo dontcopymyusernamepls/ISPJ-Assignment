@@ -121,3 +121,11 @@
  INFO users: 172.19.0.3 - - [12/Feb/2023 19:09:11] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
  INFO users: 172.19.0.3 - - [12/Feb/2023 19:28:19] REQUEST[POST] carlvoller8@gmail.com has created an account.
 >>>>>>> 87ac21fd16362db93ec1a29f6adcee1f2e01a7ac
+ INFO users: 172.18.0.3 - - [13/Feb/2023 05:38:26] REQUEST[POST] Admin@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [13/Feb/2023 05:41:46] REQUEST[GET] Admin@email.com logged out.
+ INFO users: 172.18.0.3 - - [13/Feb/2023 08:02:39] REQUEST[POST] Admin@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [13/Feb/2023 08:06:29] REQUEST[GET] Admin@email.com logged out.
+ INFO users: 172.18.0.3 - - [13/Feb/2023 08:24:15] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [13/Feb/2023 08:24:34] REQUEST[GET] fseah7997@gmail.com logged out.
+ INFO users: 172.18.0.3 - - [13/Feb/2023 08:25:05] REQUEST[POST] fseah7997@gmail.com logged in successfully.
+ INFO users: 172.18.0.3 - - [13/Feb/2023 08:25:21] REQUEST[GET] demon@email.com logged out.

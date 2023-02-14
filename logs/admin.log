@@ -128,3 +128,17 @@
  INFO admin: 172.18.0.2 - - [02/Feb/2023 04:41:19] REQUEST[GET] joycelim2003@gmail.com accessed the product list.
  INFO admin: 172.18.0.2 - - [02/Feb/2023 04:41:28] REQUEST[GET] joycelim2003@gmail.com accessed the product list.
 >>>>>>> 87ac21fd16362db93ec1a29f6adcee1f2e01a7ac
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 05:38:26] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:02:45] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:02:49] REQUEST[GET] A***n@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:02:50] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:02:52] REQUEST[GET] Admin@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:02:53] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:02:56] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:03:02] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:03:08] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:05:23] REQUEST[POST] Admin@email.com added Plaint T-shirt to the database!
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:05:25] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:05:26] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:06:01] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [13/Feb/2023 08:06:08] REQUEST[GET] Admin@email.com accessed the dashboard.
