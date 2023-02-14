@@ -600,7 +600,7 @@ def checkout_details():
             db.session.commit()
         flash(f'Your order has been submitted!','success')
         dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
-        users_logger.info('%s - - [%s] REQUEST[%s] %s has checked out.', request.remote_addr, dt, request.method, form.email.data)
+        users_logger.info('%s - - [%s] REQUEST[%s] %s has checked out.', request.remote_addr, dt, request.method)
         return redirect(url_for('thanks')) #verify
     return render_template('checkout.html', title='Checkout',form=form, cart_items=cart_items, subtotal=subtotal, total=total)
 
@@ -900,12 +900,12 @@ def customer_database():
         last_name = customer.last_name
         email = customer.email
         username = customer.username
-        customer.first_name = first_name.replace(first_name[1:4], "***", 1)
-        customer.last_name = last_name.replace(last_name[1:4], "***", 1)
+        customer.first_name = first_name.replace(first_name[2:], "*", 1)
+        customer.last_name = last_name.replace(last_name[2:], "*", 1)
         at = email.rfind('@')
         number = (at-1)-1 
-        customer.email = email.replace(email[1:4], "***", 1)
-        customer.username = username.replace(username[1:4], "***", 1)
+        customer.email = email.replace(email[1:at-1],'*'*number, 1)
+        customer.username = username.replace(username[2:], "*", 1)
         customer_list.append(customer)
         
     dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
