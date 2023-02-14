@@ -92,8 +92,10 @@ def generate_authentication_options_route():
         users_logger.info('%s - - [%s] REQUEST[%s] %s encountered unsuccessful login.', request.remote_addr, dt, request.method, email)
         return redirect(url_for('login'))
 
+    # challenge
     challenge = os.urandom(8)
 
+    # specify how passkey is to be generated
     options = generate_authentication_options(
         rp_id="localhost",
         challenge=challenge,
@@ -106,6 +108,7 @@ def generate_authentication_options_route():
 
     return options_to_json(options)
 
+#checks if fingerprint is valid
 @app.route('/verify_authentication', methods=['POST'])
 def verify_authentication():
     data = request.get_data()
@@ -126,6 +129,7 @@ def verify_authentication():
             devAuth = dev
             break
     
+    # error if fingerprint invalid
     if devAuth is None:
         return "This device is not registered with Passkeys.", 400
 
@@ -141,6 +145,7 @@ def verify_authentication():
 
     print(auth_verification)
 
+    # if fingerprint valid, redirect to home page
     if request.method == "POST":
         # record the user name
         session["email"] = email
@@ -155,12 +160,15 @@ def verify_authentication():
     next = request.args.get('next')
     return url_for('home')
 
+# add passkey to account
 @app.route('/generate_registration_options', methods=['GET'])
 def generate_registration_options_route():
 
     devices = PassKeyDevice.query.filter_by(uid=current_user.id)
+    # challenge
     challenge = os.urandom(8)
 
+    # specify how passkey is to be generated
     options = generate_registration_options(
         rp_id="localhost",
         rp_name="Spectrum App",
@@ -171,6 +179,8 @@ def generate_registration_options_route():
             authenticator_attachment=AuthenticatorAttachment.PLATFORM,
             resident_key=ResidentKeyRequirement.DISCOURAGED,
         ),
+
+        # prevent multiple signups of passkey
         exclude_credentials=list(map(
             lambda x : PublicKeyCredentialDescriptor(id=bytes(x.credentialID)),
             devices
@@ -180,12 +190,14 @@ def generate_registration_options_route():
     )
 
     session["pk_challenge"] = challenge
+    # sent back to account.html as data
 
     return options_to_json(options)
 
 @app.route('/verify-registration', methods=['POST'])
 def verify_registration():
     data = request.get_data()
+    # add passkey
     reg_verification = verify_registration_response(
         credential=RegistrationCredential.parse_raw(data),
         expected_challenge=session["pk_challenge"],
@@ -194,6 +206,7 @@ def verify_registration():
         require_user_verification=True
     )
 
+    # create passkey in database
     dev = PassKeyDevice(
         credentialID=reg_verification.credential_id,
         credentialPublicKey=reg_verification.credential_public_key,
@@ -559,6 +572,7 @@ def checkout_details():
     if form.validate_on_submit():
 
         credit_card_number = form.card_number.data
+        # supports only master and visa
         valid = re.search("^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$", credit_card_number)
 
         if valid is None:

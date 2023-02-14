@@ -76,6 +76,7 @@
               <input id="addPasskeyBtn" style="display: none" class="btn btn-secondary mt-4" onclick="gen_auth_opts()"
                 name="passkey" type="button" value="Sign In with Passkey">
               <script>
+                // check if browser supports passkey
                 function base64DecodeURL(b64urlstring) {
                   return new Uint8Array(atob(b64urlstring.replace(/-/g, '+').replace(/_/g, '/')).split('').map(val => {
                     return val.charCodeAt(0);
@@ -91,21 +92,26 @@
                 async function gen_auth_opts() {
 
                   const email = document.getElementById("email").value;
-
+                  
+                  // passkeys, send request to route
                   const data = await (await fetch("/generate_authentication_options?email=" + email)).json().catch(() => window.location.reload())
                   data.challenge = base64DecodeURL(data.challenge);
+
+                  // formatting stuff
                   data.allowCredentials = data.allowCredentials.map((cred) => {
                     return {
                       ...cred,
                       id: base64DecodeURL(cred.id)
                     }
                   })
-
+                  
+                  // passkey or fingerprint popup when login
                   try {
                     const credential = await navigator.credentials.get({
                       publicKey: data
                     });
-
+                    
+                    // server checks fingerprint data
                     if (credential) {
                       let data = await (await fetch("/verify_authentication", {
                         method: "POST",

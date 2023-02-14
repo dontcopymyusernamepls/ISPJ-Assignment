@@ -123,6 +123,7 @@
                                 async function gen_reg_opts() {
                                     const data = await (await fetch("/generate_registration_options")).json()
                                     
+                                    // format data
                                     data.challenge = base64DecodeURL(data.challenge);
                                     data.user.id = Uint8Array.from(data.user.id, (c) => c.charCodeAt(0));
                                     data.excludeCredentials = data.excludeCredentials.map((cred) => {
@@ -131,12 +132,13 @@
                                             id: base64DecodeURL(cred.id)
                                         }
                                     })
-
+                                    // pop up to create passkey
                                     try {
                                         const credential = await navigator.credentials.create({
                                             publicKey: data
                                         });
-
+                                        
+                                        // send to server
                                         if (credential) {
                                             await fetch("/verify-registration", {
                                                 method: "POST",
