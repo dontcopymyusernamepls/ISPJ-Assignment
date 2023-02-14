@@ -20,12 +20,15 @@ import spectrum.salting as salt
 from io import BytesIO
 import onetimepass
 import pyqrcode
+import re
 
 from webauthn import (
     generate_registration_options,
     verify_registration_response,
     options_to_json,
     base64url_to_bytes,
+    generate_authentication_options,
+    verify_authentication_response
 )
 
 from webauthn.helpers.structs import (
@@ -35,6 +38,8 @@ from webauthn.helpers.structs import (
     PublicKeyCredentialDescriptor,
     ResidentKeyRequirement,
     RegistrationCredential,
+    UserVerificationRequirement,
+    AuthenticationCredential
 )
 
 
@@ -69,6 +74,87 @@ def internal_server_error(e):
 
 #--------------------PASSKEYS-USER-AUTHENTICATION--------------------------#
 
+@app.route('/generate_authentication_options', methods=['GET'])
+def generate_authentication_options_route():
+    email = request.args.get("email")
+
+    print(email, type(email))
+    if email == "":
+        flash("Email cannot be blank for Passkeys Login")
+        return "", 400
+
+    user = User.query.filter_by(email=email).first()
+    devices = PassKeyDevice.query.filter_by(uid=user.id)
+
+    if user is None:
+        flash(f'Oops! Login unsuccessful. Please check your details.', 'danger')
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        users_logger.info('%s - - [%s] REQUEST[%s] %s encountered unsuccessful login.', request.remote_addr, dt, request.method, email)
+        return redirect(url_for('login'))
+
+    challenge = os.urandom(8)
+
+    options = generate_authentication_options(
+        rp_id="localhost",
+        challenge=challenge,
+        timeout=60000,
+        allow_credentials=list(map(lambda x : PublicKeyCredentialDescriptor(id=x.credentialID), devices)),
+        user_verification=UserVerificationRequirement.REQUIRED
+    )
+
+    session["pk_challenge"] = challenge
+
+    return options_to_json(options)
+
+@app.route('/verify_authentication', methods=['POST'])
+def verify_authentication():
+    data = request.get_data()
+    dataJSON = request.json
+
+    email = dataJSON["email"]
+
+    if email is None:
+        flash("Email cannot be blank for Passkeys Login")
+        return
+
+    user = User.query.filter_by(email=email).first()
+    devices = PassKeyDevice.query.filter_by(uid=user.id)
+    devAuth = None
+
+    for dev in devices:
+        if dev.credentialID == base64url_to_bytes(dataJSON["id"]):
+            devAuth = dev
+            break
+    
+    if devAuth is None:
+        return "This device is not registered with Passkeys.", 400
+
+    auth_verification = verify_authentication_response(
+        credential=AuthenticationCredential.parse_raw(data),
+        expected_challenge=session["pk_challenge"],
+        expected_origin="https://localhost:8443",
+        expected_rp_id="localhost",
+        require_user_verification=True,
+        credential_public_key=devAuth.credentialPublicKey,
+        credential_current_sign_count=0
+    )
+
+    print(auth_verification)
+
+    if request.method == "POST":
+        # record the user name
+        session["email"] = email
+        if session.get('email'):
+            flash("Welcome {}!".format(session.get('email')))
+            
+    # log user in
+    login_user(user)
+    dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+    users_logger.info('%s - - [%s] REQUEST[%s] %s logged in successfully.', request.remote_addr, dt, request.method, email)
+    flash('You are now logged in!')
+    next = request.args.get('next')
+    return url_for('home')
+
 @app.route('/generate_registration_options', methods=['GET'])
 def generate_registration_options_route():
 
@@ -86,7 +172,7 @@ def generate_registration_options_route():
             resident_key=ResidentKeyRequirement.DISCOURAGED,
         ),
         exclude_credentials=list(map(
-            lambda x : PublicKeyCredentialDescriptor(id=bytes(x["credentialID"])),
+            lambda x : PublicKeyCredentialDescriptor(id=bytes(x.credentialID)),
             devices
         )),
         timeout=60000,
@@ -96,6 +182,27 @@ def generate_registration_options_route():
     session["pk_challenge"] = challenge
 
     return options_to_json(options)
+
+@app.route('/verify-registration', methods=['POST'])
+def verify_registration():
+    data = request.get_data()
+    reg_verification = verify_registration_response(
+        credential=RegistrationCredential.parse_raw(data),
+        expected_challenge=session["pk_challenge"],
+        expected_origin="https://localhost:8443",
+        expected_rp_id="localhost",
+        require_user_verification=True
+    )
+
+    dev = PassKeyDevice(
+        credentialID=reg_verification.credential_id,
+        credentialPublicKey=reg_verification.credential_public_key,
+        uid=current_user.id
+    )
+    db.session.add(dev)
+    db.session.commit()
+
+    return ""
 
 #--------------------LOGIN-LOGOUT-REGISTER-PAGE--------------------------#
 
@@ -452,12 +559,19 @@ def checkout_details():
     public_key = rsa.read_public_key(public_keyfile)
 
     if form.validate_on_submit():
+
+        credit_card_number = form.card_number.data
+        valid = re.search("^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$", credit_card_number)
+
+        if valid is None:
+            flash("Invalid Credit Card Number!")
+            return render_template('checkout.html', title='Checkout',form=form, cart_items=cart_items, subtotal=subtotal, total=total)
+
         full_name = form.full_name.data
         en_address = rsa.encrypt(public_key, form.address.data.encode('utf-8'))
         postal_code = form.postal_code.data
         en_card_number = rsa.encrypt(public_key, form.card_number.data.encode('utf-8'))
-        en_cvv = rsa.encrypt(public_key, form.cvv.data.encode('utf-8'))
-        checkout_details = Customer_Payments(full_name=full_name, address=en_address, postal_code=postal_code, card_number=en_card_number, cvv=en_cvv)
+        checkout_details = Customer_Payments(full_name=full_name, address=en_address, postal_code=postal_code, card_number=en_card_number)
         db.session.add(checkout_details)
         
         print(cart_items)

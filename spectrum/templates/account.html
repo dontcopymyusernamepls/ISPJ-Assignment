@@ -4,155 +4,209 @@
 
 <section class="login_section">
     <div class="contact_container">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mx-auto">
-            <div class="contact_form layout_padding">
-              <div class="heading_container heading_center">
-                <h2> Account Information </h2>
-            </div>
-            <br>   
-                <img src="{{ image_file }}" id="pfp"  class="img-responsive img-rounded" style="border: 3px solid #9269da;" alt="user_profilePic" width = "300" height = "300"><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="contact_form layout_padding">
+                        <div class="heading_container heading_center">
+                            <h2> Account Information </h2>
+                        </div>
+                        <br>
+                        <img src="{{ image_file }}" id="pfp" class="img-responsive img-rounded"
+                            style="border: 3px solid #9269da;" alt="user_profilePic" width="300" height="300"><br>
                         <p class="text-centered-username" id="displayusername">{{ current_user.username }}</p>
                         <p class="text-centered" id="displayemail">{{ current_user.email }}</p>
                         <div class="container">
-                            <button type='button' id="deletebutton" class="btn btn-secondary" data-toggle="modal" data-target="#deleteModal">Delete Account</button>
-                
+                            <button type='button' id="deletebutton" class="btn btn-secondary" data-toggle="modal"
+                                data-target="#deleteModal">Delete Account</button>
+
+                        </div>
+
                     </div>
-         
-            </div>
-        </div>
-                  <div class="col-md-6 mx-auto">
+                </div>
+                <div class="col-md-6 mx-auto">
                     <div class="contact_form layout_padding">
                         <div class="heading_container heading_center">
                             <h2> Update Account </h2>
                         </div>
-        <form method="POST", action='' enctype="multipart/form-data" novalidate>
-            {{ form.hidden_tag() }}
-            <fieldset class="form-group">
-                
-            </fieldset>
-    
-            <div class='form-group mb-3'>
-                {{ form.first_name.label(class='form-control-label') }}
-    
-                {% if form.first_name.errors %}
-                    {{ form.first_name(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.first_name.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
+                        <form method="POST" , action='' enctype="multipart/form-data" novalidate>
+                            {{ form.hidden_tag() }}
+                            <fieldset class="form-group">
+
+                            </fieldset>
+
+                            <div class='form-group mb-3'>
+                                {{ form.first_name.label(class='form-control-label') }}
+
+                                {% if form.first_name.errors %}
+                                {{ form.first_name(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.first_name.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.first_name(class="form-control form-control-lg") }}
+                                {% endif %}
                             </div>
-                {% else %}
-                    {{ form.first_name(class="form-control form-control-lg") }}
-                {% endif %}
-            </div>
-    
-            <div class='form-group mb-3'>
-                {{ form.last_name.label(class='form-control-label') }}
-                {% if form.last_name.errors %}
-                    {{ form.last_name(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.last_name.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
+
+                            <div class='form-group mb-3'>
+                                {{ form.last_name.label(class='form-control-label') }}
+                                {% if form.last_name.errors %}
+                                {{ form.last_name(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.last_name.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.last_name(class="form-control form-control-lg") }}
+                                {% endif %}
                             </div>
-                {% else %}
-                    {{ form.last_name(class="form-control form-control-lg") }}
-                {% endif %}
-            </div>
-    
-            <div class='form-group mb-3'>
-                {{ form.username.label(class='form-control-label') }}
-                {% if form.username.errors %}
-                    {{ form.username(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.username.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
+
+                            <div class='form-group mb-3'>
+                                {{ form.username.label(class='form-control-label') }}
+                                {% if form.username.errors %}
+                                {{ form.username(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.username.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.username(class="form-control form-control-lg") }}
+                                {% endif %}
                             </div>
-                {% else %}
-                    {{ form.username(class="form-control form-control-lg") }}
-                {% endif %}
-            </div>
-    
-            <div class='form-group mb-3'>
-                {{ form.email.label(class='form-control-label') }}
-                {% if form.email.errors %}
-                    {{ form.email(class="form-control form-control-lg is-invalid") }}
-                    <div class="invalid-feedback">
-                        {% for error in form.email.errors %}
-                            <span>{{ error }}</span>
-                        {% endfor %}
+
+                            <div class='form-group mb-3'>
+                                {{ form.email.label(class='form-control-label') }}
+                                {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                    <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                                {% else %}
+                                {{ form.email(class="form-control form-control-lg") }}
+                                {% endif %}
                             </div>
-                {% else %}
-                    {{ form.email(class="form-control form-control-lg") }}
-                {% endif %}
-            </div>
-            <div class='form-group mb-3'>
-                {{ form.picture.label }}
-                {{ form.picture(class='form-control-file') }}
-                {% if form.picture.errors %}
-                    {% for error in form.picture.errors %}
-                        <span class='text-danger'>{{ error }}</span><br>
-                    {% endfor %}
-                {% endif %}
-            </div><br>
-            <div class="form-group mb-3">
-                {{ form.submit(class='btn btn-secondary') }}
-            </div>
-        </form>
-        <div class="form-group mb-3">
-            <input class="btn btn-secondary" onclick="gen_reg_opts()" name="passkey" type="button" value="Add PassKey to Account">
-            <script>
-                function base64DecodeURL(b64urlstring) {
-                    return new Uint8Array(atob(b64urlstring.replace(/-/g, '+').replace(/_/g, '/')).split('').map(val => {
-                        return val.charCodeAt(0);
-                    }));
-                }
-                async function gen_reg_opts() {
-                    const data = await (await fetch("/generate_registration_options")).json()
-                    data.challenge = base64DecodeURL(data.challenge);
-                    data.user.id = Uint8Array.from(data.user.id, (c) => c.charCodeAt(0));
-                    data.excludeCredentials = data.excludeCredentials.map((cred) => {
-                        return {
-                            ...cred,
-                            id: base64DecodeURL(cred.id)
-                        }
-                    })
-                    const credential = await navigator.credentials.create({
-                        publicKey: data
-                    });
+                            <div class='form-group mb-3'>
+                                {{ form.picture.label }}
+                                {{ form.picture(class='form-control-file') }}
+                                {% if form.picture.errors %}
+                                {% for error in form.picture.errors %}
+                                <span class='text-danger'>{{ error }}</span><br>
+                                {% endfor %}
+                                {% endif %}
+                            </div><br>
+                            <div class="form-group mb-3">
+                                {{ form.submit(class='btn btn-secondary') }}
+                            </div>
+                        </form>
+                        <div class="form-group mb-3">
+                            <input id="addPasskeyBtn" style="display: none" class="btn btn-secondary"
+                                onclick="gen_reg_opts()" name="passkey" type="button" value="Add PassKey to Account">
+                            <script>
+                                function base64DecodeURL(b64urlstring) {
+                                    return new Uint8Array(atob(b64urlstring.replace(/-/g, '+').replace(/_/g, '/')).split('').map(val => {
+                                        return val.charCodeAt(0);
+                                    }));
+                                }
 
-                    console.log(credential)
-                }
-            </script>
-        </div>
-    </div>
+                                function base64EncodeURL(byteArray) {
+                                    return btoa(Array.from(new Uint8Array(byteArray)).map(val => {
+                                        return String.fromCharCode(val);
+                                    }).join('')).replace(/\+/g, '-').replace(/\//g, '_').replace(/\=/g, '');
+                                }
 
-</div>
+                                async function gen_reg_opts() {
+                                    const data = await (await fetch("/generate_registration_options")).json()
+                                    
+                                    data.challenge = base64DecodeURL(data.challenge);
+                                    data.user.id = Uint8Array.from(data.user.id, (c) => c.charCodeAt(0));
+                                    data.excludeCredentials = data.excludeCredentials.map((cred) => {
+                                        return {
+                                            ...cred,
+                                            id: base64DecodeURL(cred.id)
+                                        }
+                                    })
 
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="deleteModalLabel">Delete Account?</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          You will not be able to login using this email anymore unless you register again.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <form action="{{ url_for('delete_account')}}" method="POST">
-              <input type="submit" class="btn btn-secondary" value='Delete'>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+                                    try {
+                                        const credential = await navigator.credentials.create({
+                                            publicKey: data
+                                        });
 
-{% endblock content %}
+                                        if (credential) {
+                                            await fetch("/verify-registration", {
+                                                method: "POST",
+                                                headers: {
+                                                    'Accept': 'application/json',
+                                                    'Content-Type': 'application/json'
+                                                },
+                                                body: JSON.stringify({
+                                                    authenticatorAttachment: credential.authenticatorAttachment,
+                                                    id: credential.id,
+                                                    rawId: base64EncodeURL(credential.rawId),
+                                                    response: {
+                                                        attestationObject: base64EncodeURL(credential.response.attestationObject),
+                                                        clientDataJSON: base64EncodeURL(credential.response.clientDataJSON)
+                                                    },
+                                                    type: credential.type
+                                                })
+                                            });
+                                            alert("Passkey successfully added!")
+                                        }
+                                    } catch (err) {
+                                        console.log(err);
+                                        alert("Operation cancelled");
+                                    }
+                                }
 
+                                (function () {
+                                    const isAvailable = window.PublicKeyCredential
+                                        && window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable
+                                        && window.PublicKeyCredential.isConditionalMediationAvailable;
+
+                                    if (isAvailable) {
+
+                                        Promise.all([
+                                            window.PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable(),
+                                            window.PublicKeyCredential.isConditionalMediationAvailable()
+                                        ]).then((res) => {
+                                            const isAllTrue = res.every((r) => r === true);
+                                            if (isAllTrue) document.getElementById("addPasskeyBtn").style.display = "block"
+                                        });
+
+                                    }
+                                })()
+                            </script>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Delete Account?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                You will not be able to login using this email anymore unless you register again.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <form action="{{ url_for('delete_account')}}" method="POST">
+                                    <input type="submit" class="btn btn-secondary" value='Delete'>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endblock content %}
