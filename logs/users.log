@@ -217,3 +217,6 @@
  INFO users: 172.18.0.3 - - [14/Feb/2023 09:40:47] REQUEST[GET] demon@email.com logged out.
  INFO users: 172.18.0.3 - - [14/Feb/2023 09:41:04] REQUEST[POST] Admin@email.com logged in successfully.
  INFO users: 172.18.0.3 - - [14/Feb/2023 09:45:13] REQUEST[POST] testing@example.com has submitted a feedback.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 09:46:56] REQUEST[POST] yxt@example.com has submitted a feedback.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 09:47:02] REQUEST[GET] Admin@email.com logged out.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 09:50:26] REQUEST[POST] demon@email.com logged in successfully.

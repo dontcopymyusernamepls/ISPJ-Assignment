@@ -209,3 +209,5 @@
  INFO admin: 172.18.0.3 - - [14/Feb/2023 09:43:59] REQUEST[GET] A***n@email.com accessed the customer database.
  INFO admin: 172.18.0.3 - - [14/Feb/2023 09:45:33] REQUEST[GET] Admin@email.com accessed the dashboard.
  INFO admin: 172.18.0.3 - - [14/Feb/2023 09:45:34] REQUEST[GET] Admin@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 09:46:27] REQUEST[GET] Admin@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 09:46:48] REQUEST[GET] Admin@email.com accessed the dashboard.
