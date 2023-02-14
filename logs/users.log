@@ -167,3 +167,20 @@
  INFO users: 172.19.0.3 - - [13/Feb/2023 20:10:24] REQUEST[POST] carlvoller8@gmail.com has created an account.
  INFO users: 172.19.0.3 - - [13/Feb/2023 20:10:43] REQUEST[POST] carlvoller8@gmail.com logged in successfully.
 >>>>>>> b51fc444b8d1467274fb55a2a933d46cd9a848f0
+ INFO users: 172.18.0.2 - - [14/Feb/2023 01:31:36] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 01:41:04] REQUEST[POST] demon@email.com has created an account.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 01:41:41] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 01:43:55] REQUEST[GET] demon@email.com logged out.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 01:44:13] REQUEST[POST] Admin@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 01:49:29] REQUEST[GET] Admin@email.com logged out.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 01:50:14] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 02:05:08] REQUEST[GET] demon@email.com logged out.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 02:45:09] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 02:58:16] REQUEST[GET] demon@email.com logged out.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 02:58:48] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 03:12:27] REQUEST[GET] demon@email.com logged out.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 03:12:48] REQUEST[POST] Admin@email.com logged in successfully.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 03:15:18] REQUEST[GET] Admin@email.com logged out.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 03:21:47] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.18.0.2 - - [14/Feb/2023 03:33:21] REQUEST[GET] demon@email.com logged out.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 04:28:45] REQUEST[POST] demon@email.com logged in successfully.

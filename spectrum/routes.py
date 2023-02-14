@@ -1,6 +1,6 @@
 import secrets, os
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request, abort, session, current_app
+from flask import render_template, url_for, flash, redirect, request, abort, session, current_app, jsonify
 from spectrum import app, bcrypt, db, mail, users_logger, error_logger, admin_logger, product_logger, root_logger
 from flask_login import login_user, current_user, logout_user, login_required
 from sqlalchemy import extract
@@ -54,7 +54,6 @@ def admin_required(f):
         else:
             abort(401)
     return wrap
-
 
 #--------------------CUSTOM-ERROR-PAGE-------------------------#
 
@@ -393,6 +392,8 @@ def account():
         current_user.email = form.email.data
         db.session.commit()
         flash('Your account has been updated.', 'success')
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        users_logger.info('%s - - [%s] REQUEST[%s] %s has updated their account.', request.remote_addr, dt, request.method, form.email.data)
         return redirect(url_for('account'))
 
     elif request.method == 'GET':

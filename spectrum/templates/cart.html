@@ -17,12 +17,12 @@
             <tr>
                 <td>{{loop.index}}</td>
                 <td>{{product.name}}</td>
-                <td>{{product.image}}</td>
+                <td><img src="{{url_for('static',filename='images/' + product.image)}}" alt="{{product.name}}" width="50" height="50"></td>
                 <td>{{product.price}}</td>
                 <td>{{product.quantity}}</td>
                 {% set subtotal = product.quantity|int * product.price|float %}
                 <td>{{subtotal}}</td>
-                <td> <a href="/deleteitem/{{key}}">Delete</a></td>
+                <td> <a href="/deleteitem/{{key}}">Delete</a></td> 
             </tr>
         {% endfor %}
         </tbody>

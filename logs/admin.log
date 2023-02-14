@@ -147,3 +147,22 @@
  INFO admin: 172.19.0.3 - - [13/Feb/2023 17:24:48] REQUEST[GET] carlvoller8@gmail.com accessed the dashboard.
  INFO admin: 172.19.0.3 - - [13/Feb/2023 19:43:34] REQUEST[GET] carlvoller8@gmail.com accessed the dashboard.
 >>>>>>> b51fc444b8d1467274fb55a2a933d46cd9a848f0
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:42:35] REQUEST[POST] Admin@email.com has created an account.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:14] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:16] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:18] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:19] REQUEST[GET] A***n@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:21] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:22] REQUEST[GET] Admin@email.com accessed the customer database.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:23] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:45] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:44:49] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:46:06] REQUEST[POST] Admin@email.com added Plaint T-shirt to the database!
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:47:15] REQUEST[POST] Admin@email.com added Core Runner Running Shoes to the database!
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:47:50] REQUEST[POST] Admin@email.com added Noise Cancelling Headphones to the database!
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:48:42] REQUEST[POST] Admin@email.com added Travel Backpack to the database!
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:49:24] REQUEST[POST] Admin@email.com added Fresh Foam Running Shoes to the database!
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:49:25] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.3 - - [14/Feb/2023 01:49:26] REQUEST[GET] Admin@email.com accessed the product list.
+ INFO admin: 172.18.0.2 - - [14/Feb/2023 03:12:53] REQUEST[GET] Admin@email.com accessed the dashboard.
+ INFO admin: 172.18.0.2 - - [14/Feb/2023 03:15:16] REQUEST[GET] Admin@email.com accessed the dashboard.
