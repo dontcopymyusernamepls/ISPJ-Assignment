@@ -599,6 +599,8 @@ def checkout_details():
             session["shoppingcart"] = dict()
             db.session.commit()
         flash(f'Your order has been submitted!','success')
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        users_logger.info('%s - - [%s] REQUEST[%s] %s has checked out.', request.remote_addr, dt, request.method, form.email.data)
         return redirect(url_for('thanks')) #verify
     return render_template('checkout.html', title='Checkout',form=form, cart_items=cart_items, subtotal=subtotal, total=total)
 
@@ -684,6 +686,8 @@ def Userfeedbackform():
         db.session.add(feedback)
         db.session.commit()
         flash(f'Your feedback has been submitted!','success')
+        dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
+        users_logger.info('%s - - [%s] REQUEST[%s] %s has submitted a feedback.', request.remote_addr, dt, request.method, form.email.data)
         return redirect(url_for('feedback_received'))
 
     # if form.validate_on_submit():
@@ -779,6 +783,7 @@ def add_product():
         db.session.commit()
         dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
         admin_logger.info('%s - - [%s] REQUEST[%s] %s added %s to the database!', request.remote_addr, dt, request.method, current_user.email, name)
+        product_logger.info('%s - - [%s] REQUEST[%s] %s added %s to the database!', request.remote_addr, dt, request.method, current_user.email, name)
         flash(f'The product {name} has been added to database!','success')
         return redirect(url_for('add_product'))
     return render_template('admin/add_product.html', form=form, title='Add a Product', categories=categories)
@@ -846,6 +851,7 @@ def update_product(id):
         db.session.commit()
         dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
         admin_logger.info('%s - - [%s] REQUEST[%s] %s updated a product.', request.remote_addr, dt, request.method, current_user.email, product.name)
+        product_logger.info('%s - - [%s] REQUEST[%s] %s updated %s.', request.remote_addr, dt, request.method, current_user.email, name)
         flash('The product has been updated!','success')
         return redirect(url_for('display_product'))
     form.name.data = product.name
@@ -874,7 +880,8 @@ def delete_product(id):
         except Exception as e:
             print(e)
         dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
-        admin_logger.info('%s - - [%s] REQUEST[%s] %s deleted %s from the product list. ', request.remote_addr, dt, request.method, current_user.email, product.name)
+        admin_logger.info('%s - - [%s] REQUEST[%s] %s deleted %s from the database. ', request.remote_addr, dt, request.method, current_user.email, product.name)
+        product_logger.warning('%s - - [%s] REQUEST[%s] %s deleted %s from the database!', request.remote_addr, dt, request.method, current_user.email, product.name)
         db.session.delete(product)
         db.session.commit()
         flash(f'The product {product.name} has been deleted from the product list.','success')

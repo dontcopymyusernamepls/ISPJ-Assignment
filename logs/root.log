@@ -23840,3 +23840,15 @@ FileNotFoundError: [Errno 2] No such file or directory: '/app/flask_session/df4e
  INFO werkzeug:  * Restarting with stat
  WARNING werkzeug:  * Debugger is active!
  INFO werkzeug:  * Debugger PIN: 262-225-594
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 262-225-594
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 262-225-594
+ INFO werkzeug:  * Detected change in '/app/spectrum/routes.py', reloading
+ INFO werkzeug:  * Restarting with stat
+ WARNING werkzeug:  * Debugger is active!
+ INFO werkzeug:  * Debugger PIN: 262-225-594
