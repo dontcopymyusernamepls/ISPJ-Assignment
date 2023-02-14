@@ -900,12 +900,15 @@ def customer_database():
         last_name = customer.last_name
         email = customer.email
         username = customer.username
-        customer.first_name = first_name.replace(first_name[2:], "*", 1)
-        customer.last_name = last_name.replace(last_name[2:], "*", 1)
+        first_number = len(first_name)-2
+        last_number = len(last_name)-2
+        user_number = len(username) - 2
+        customer.first_name = first_name.replace(first_name[2:(len(first_name))], "*"*first_number,1)
+        customer.last_name = last_name.replace(last_name[2:len(last_name)], "*"*last_number, 1)
         at = email.rfind('@')
         number = (at-1)-1 
         customer.email = email.replace(email[1:at-1],'*'*number, 1)
-        customer.username = username.replace(username[2:], "*", 1)
+        customer.username = username.replace(username[2:len(username)], "*"*user_number, 1)
         customer_list.append(customer)
         
     dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
@@ -925,12 +928,15 @@ def admin_database():
         last_name = customer.last_name
         email = customer.email
         username = customer.username
-        customer.first_name = first_name.replace(first_name[2:], "*", 1)
-        customer.last_name = last_name.replace(last_name[2:], "*", 1)
+        first_number = len(first_name)-2
+        last_number = len(last_name)-2
+        user_number = len(username) - 2
+        customer.first_name = first_name.replace(first_name[2:(len(first_name))], "*"*first_number,1)
+        customer.last_name = last_name.replace(last_name[2:len(last_name)], "*"*last_number, 1)
         at = email.rfind('@')
         number = (at-1)-1 
         customer.email = email.replace(email[1:at-1],'*'*number, 1)
-        customer.username = username.replace(username[2:], "*", 1)
+        customer.username = username.replace(username[2:len(username)], "*"*user_number, 1)
         customer_list.append(customer)
         
     dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
