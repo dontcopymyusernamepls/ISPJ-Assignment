@@ -224,3 +224,4 @@
  INFO users: 172.18.0.3 - - [14/Feb/2023 09:51:57] REQUEST[POST] demon@email.com has updated their account.
  INFO users: 172.18.0.3 - - [14/Feb/2023 09:52:07] REQUEST[GET] demon@email.com logged out.
  INFO users: 172.18.0.3 - - [14/Feb/2023 09:52:29] REQUEST[POST] Admin@email.com logged in successfully.
+ INFO users: 172.18.0.3 - - [14/Feb/2023 10:00:49] REQUEST[GET] Admin@email.com logged out.
