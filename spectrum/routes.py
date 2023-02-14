@@ -783,7 +783,7 @@ def add_product():
         db.session.commit()
         dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
         admin_logger.info('%s - - [%s] REQUEST[%s] %s added %s to the database!', request.remote_addr, dt, request.method, current_user.email, name)
-        product_logger.info('%s - - [%s] REQUEST[%s] %s added %s to the database!', request.remote_addr, dt, request.method, current_user.email, name)
+        product_logger.info('%s - - [%s] REQUEST[%s] %s added %s to the database!', request.remote_addr, dt, request.method, current_user.email)
         flash(f'The product {name} has been added to database!','success')
         return redirect(url_for('add_product'))
     return render_template('admin/add_product.html', form=form, title='Add a Product', categories=categories)
@@ -851,7 +851,7 @@ def update_product(id):
         db.session.commit()
         dt = datetime.now().strftime('%d/%b/%Y %H:%M:%S')
         admin_logger.info('%s - - [%s] REQUEST[%s] %s updated a product.', request.remote_addr, dt, request.method, current_user.email, product.name)
-        product_logger.info('%s - - [%s] REQUEST[%s] %s updated %s.', request.remote_addr, dt, request.method, current_user.email, name)
+        product_logger.info('%s - - [%s] REQUEST[%s] %s updated %s.', request.remote_addr, dt, request.method, current_user.email)
         flash('The product has been updated!','success')
         return redirect(url_for('display_product'))
     form.name.data = product.name
