@@ -235,3 +235,5 @@
  INFO users: 172.19.0.3 - - [15/Feb/2023 09:15:23] REQUEST[POST] demon@email.com logged in successfully.
  INFO users: 172.19.0.3 - - [15/Feb/2023 09:15:41] REQUEST[GET] demon@email.com logged out.
  INFO users: 172.19.0.3 - - [15/Feb/2023 09:16:28] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.19.0.3 - - [15/Feb/2023 09:17:23] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.19.0.3 - - [15/Feb/2023 09:17:42] REQUEST[GET] demon@email.com logged out.
