@@ -22,6 +22,22 @@ import onetimepass
 import pyqrcode
 import re
 
+
+import nltk
+nltk.download('popular')
+from nltk.stem import WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
+import pickle
+import numpy as np
+from keras.models import load_model
+model = load_model('spectrum/model.h5')
+import json
+import random
+intents = json.loads(open('spectrum/data.json').read())
+words = pickle.load(open('spectrum/texts.pkl','rb'))
+classes = pickle.load(open('spectrum/labels.pkl','rb'))
+
+
 from webauthn import (
     generate_registration_options,
     verify_registration_response,
@@ -710,7 +726,7 @@ def feedback_received():
 
 @app.route('/admin/register', methods=['GET', 'POST'])
 @login_required
-#admin_required
+@admin_required
 def admin_register():
     """User registration route."""
     #if current_user.is_authenticated:
@@ -964,8 +980,8 @@ def sales():
     # return render_template('admin/sales.html',title='Sales Report' ,plot=line_graph, total_count=total_count, total_profit=total_profit, current_day_products=current_day_products)
 
 @app.route('/admin/display_feedback')
-#@login_required
-#@admin_required
+@login_required
+@admin_required
 def feedback():
     # keysize = 2048
     private_keyfile = "a_private.pem"
@@ -1000,8 +1016,8 @@ def feedback():
 
 
 @app.route('/show-monitor/admin-logs')
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def admin_logs_monitor():
 
     monitoring_list =[]
@@ -1017,8 +1033,8 @@ def admin_logs_monitor():
 
 
 @app.route('/show-monitor/error-logs')
-# # @login_required
-# # @admin_required
+@login_required
+@admin_required
 def error_logs_monitor():
     monitoring_list =[]
     with open('logs/error.log') as f:
@@ -1033,8 +1049,8 @@ def error_logs_monitor():
 
 
 @app.route('/show-monitor/product-logs')
-# # @login_required
-# # @admin_required
+@login_required
+@admin_required
 def product_logs_monitor():
     monitoring_list =[]
     with open('logs/error.log') as f:
@@ -1049,8 +1065,8 @@ def product_logs_monitor():
 
 
 @app.route('/show-monitor/root-logs')
-# # @login_required
-# # @admin_required
+@login_required
+@admin_required
 def root_logs_monitor():
     monitoring_list =[]
     with open('logs/root.log') as f:
@@ -1065,8 +1081,8 @@ def root_logs_monitor():
 
 
 @app.route('/show-monitor/users-logs')
-# # @login_required
-# # @admin_required
+@login_required
+@admin_required
 def users_logs_monitor():
     monitoring_list =[]
     with open('logs/users.log') as f:
@@ -1081,20 +1097,20 @@ def users_logs_monitor():
 
 
 @app.route('/admin/monitor')
-# @login_required
-# @admin_required
+@login_required
+@admin_required
 def monitor_menu():
     return render_template('admin/monitor.html', title = 'Monitoring Logs')
 
 @app.route('/show-logs')
 @login_required
-#@admin_required
+@admin_required
 def show_logs():
     return render_template('admin/showlogs.html')
 
 @app.route('/show-logs/admin-logs')
 @login_required
-#@admin_required
+@admin_required
 def admin_logs():
     with open('logs/admin.log') as f:
         output = f.readlines()
@@ -1102,7 +1118,7 @@ def admin_logs():
 
 @app.route('/show-logs/error-logs')
 @login_required
-#@admin_required
+@admin_required
 def error_logs():
     with open('logs/error.log') as f:
         output = f.readlines()
@@ -1110,7 +1126,7 @@ def error_logs():
 
 @app.route('/show-logs/product-logs')
 @login_required
-#@admin_required
+@admin_required
 def product_logs():
     with open('logs/product.log') as f:
         output = f.readlines()
@@ -1118,7 +1134,7 @@ def product_logs():
 
 @app.route('/show-logs/root-logs')
 @login_required
-#@admin_required
+@admin_required
 def root_logs():
     with open('logs/root.log') as f:
         output = f.readlines()
@@ -1126,7 +1142,7 @@ def root_logs():
 
 @app.route('/show-logs/users-logs')
 @login_required
-#@admin_required
+@admin_required
 def users_logs():
     with open('logs/users.log') as f:
         output = f.readlines()
@@ -1134,6 +1150,62 @@ def users_logs():
 
 @app.route('/admin/logs')
 @login_required
-#@admin_required
+@admin_required
 def log_menu():
     return render_template('admin/logs.html', title = 'Logs')
+
+#---------------------Chatbot------------------------#
+def clean_up_sentence(sentence):
+    # tokenize the pattern - split words into array
+    sentence_words = nltk.word_tokenize(sentence)
+    # stem each word - create short form for word
+    sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
+    return sentence_words
+
+# return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
+
+def bow(sentence, words, show_details=True):
+    # tokenize the pattern
+    sentence_words = clean_up_sentence(sentence)
+    # bag of words - matrix of N words, vocabulary matrix
+    bag = [0]*len(words)  
+    for s in sentence_words:
+        for i,w in enumerate(words):
+            if w == s: 
+                # assign 1 if current word is in the vocabulary position
+                bag[i] = 1
+                if show_details:
+                    print ("found in bag: %s" % w)
+    return(np.array(bag))
+
+def predict_class(sentence, model):
+    # filter out predictions below a threshold
+    p = bow(sentence, words,show_details=False)
+    res = model.predict(np.array([p]))[0]
+    ERROR_THRESHOLD = 0.25
+    results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
+    # sort by strength of probability
+    results.sort(key=lambda x: x[1], reverse=True)
+    return_list = []
+    for r in results:
+        return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
+    return return_list
+
+def getResponse(ints, intents_json):
+    tag = ints[0]['intent']
+    list_of_intents = intents_json['intents']
+    for i in list_of_intents:
+        if(i['tag']== tag):
+            result = random.choice(i['responses'])
+            break
+    return result
+
+def chatbot_response(msg):
+    ints = predict_class(msg, model)
+    res = getResponse(ints, intents)
+    return res
+
+@app.route("/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    return chatbot_response(userText)
