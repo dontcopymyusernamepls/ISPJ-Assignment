@@ -1,0 +1,147 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+     "responses": ["Hello, thanks for visiting", "Good to see you", "Hi there, how can I help?"],
+     "context": [""]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+     "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+     "context": [""]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure"],
+     "context": [""]
+    },
+    {"tag": "noanswer",
+     "patterns": [],
+     "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+     "context": [""]
+    },
+    {"tag": "options",
+     "patterns": ["How you could help me?", 
+     "What you can do?", 
+     "What help you provide?", 
+     "How you can be helpful?",  
+     "Which items do you have?",
+     "What kinds of items are there?",
+     "What do you sell?",
+     "What is sold?",
+     "Can I buy shirts, pants, shoes, balls and equipments?",
+     "Can I buy tops, bottoms, shoes, balls and equipments?",
+     "I want to buy shirts and pants."],
+     "responses": [
+        "We sell sports related items such as tops, bottom, balls, equipments and shoes. To see our products, head on over to the Products page!",
+        "Tops, bottoms, balls and many other sports equipments are sold at Spectrum. To see our products, head on over to the Products page!"
+    ],
+     "context": [""]
+    },
+    {
+        "tag": "payments",
+        "patterns": [
+          "Do you take credit cards?",
+          "Do you accept Mastercard?",
+          "Can I pay with Paypal?",
+          "Are you cash only?"
+        ],
+        "responses": [
+          "We accept VISA and Mastercard",
+          "We accept most major credit cards, and Paypal"
+        ]
+      },
+      {
+        "tag": "delivery",
+        "patterns": [
+          "How long does delivery take?",
+          "How long does shipping take?",
+          "When do I get my delivery?"
+        ],
+        "responses": [
+          "Delivery takes 2-4 days",
+          "Shipping takes 2-4 days"
+        ]
+      },
+      {
+        "tag": "member",
+        "patterns": [
+          "Do you have memberships?",
+          "Can I be a member?",
+          "Do I have discounts as a member?"
+        ],
+        "responses": [
+          "We do not have memberships",
+          "There are no memberships"
+        ]
+      },
+      {
+        "tag": "location",
+        "patterns": [
+          "Where are you based?",
+          "Where are your outlets",
+          "How many outlets do you have?",
+          "Where are your outlets located at?",
+          "Store location?"
+        ],
+        "responses": [
+          "We have 3 outlets in Singapore at Ang Mo Kio, City Hall and Pasir Ris. For more information, head to the About page"
+        ]
+      },
+      {
+        "tag": "feedback",
+        "patterns": [
+          "Can I give ratings?",
+          "Can I give my feedbacks?",
+          "Where do I give my feedbacks?",
+          "How do I give my ratings?",
+          "I would like to commend Spectrum.",
+          "I want to complain."
+        ],
+        "responses": [
+          "To give feedbacks, head over to our Feedbacks page from the navigation bar at the top",
+          "Thank you for visiting us! Head over to the Feedbacks page from the navigation bar at the top to tell us your thoughts"
+        ]
+      },
+      {
+        "tag": "contact",
+        "patterns": [
+          "How do I contact your employees?",
+          "What is your number?",
+          "Do you have an email?",
+          "How do I give my ratings?",
+          "Email address or number?"
+        ],
+        "responses": [
+          "You can email us at demo@gmail.com or call us at (+71)1234567890",
+          "Contact us at demo@gmail.com or (+71)1234567890"
+        ]
+      },
+      {
+        "tag": "return",
+        "patterns": [
+          "Can I return a faulty product?",
+          "How to return a faulty product?",
+          "Can Spectrum refund my money?",
+          "I want to return a spoiled product.",
+          "Email address or number?"
+        ],
+        "responses": [
+          "Sorry about that. Please take a picture of the faulty product and email or message us."
+        ]
+      },
+
+      {
+        "tag": "funny",
+        "patterns": [
+          "Tell me a joke!",
+          "Tell me something funny!",
+          "Do you know a joke?"
+        ],
+        "responses": [
+          "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+          "What did the buffalo say when his son left for college? Bison."
+        ]
+      }
+
+]
+}

@@ -232,3 +232,6 @@
  INFO users: 172.18.0.3 - - [14/Feb/2023 10:06:29] REQUEST[POST] testing@example.com deleted their account.
  INFO users: 172.19.0.3 - - [14/Feb/2023 10:25:19] REQUEST[POST] Admin@email.com logged in successfully.
  INFO users: 172.19.0.3 - - [14/Feb/2023 10:51:57] REQUEST[GET] Admin@email.com logged out.
+ INFO users: 172.19.0.3 - - [15/Feb/2023 09:15:23] REQUEST[POST] demon@email.com logged in successfully.
+ INFO users: 172.19.0.3 - - [15/Feb/2023 09:15:41] REQUEST[GET] demon@email.com logged out.
+ INFO users: 172.19.0.3 - - [15/Feb/2023 09:16:28] REQUEST[POST] demon@email.com logged in successfully.
